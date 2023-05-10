@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import SelfIntroduction from '../components/leftBar/SelfIntroduction';
+import PersonalQuailities from '../components/leftBar/PersonalQualities';
 import HandsOnExperiences from '../components/rightBar/HandsOnExperiences';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,7 +20,16 @@ export default function Home() {
                             availability={'immediate'}
                         />
                     </div>
+
+                    <div>
+                        <PersonalQuailities
+                            characterList={`Interpersonal skills, Flexibility,\n
+                            Creativity, Willingness to learn,\n
+                            Team player, Handling pressure,\n
+                            Problem solving, Attention to detail`} />
+                    </div>
                 </div>
+
                 <div className='rightBar w-3/5 bg-white'>
                     <div>
                         <HandsOnExperiences
