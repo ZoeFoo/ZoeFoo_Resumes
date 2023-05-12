@@ -94,6 +94,10 @@ export default function Home() {
                     <div className='border-2 border-sky-500'></div>
                 </div>
             </div>
+
+            <div className='page'>
+                <div>second page</div>
+            </div>
         </main>
     )
 }

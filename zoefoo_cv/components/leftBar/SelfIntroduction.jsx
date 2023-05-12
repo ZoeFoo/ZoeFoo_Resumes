@@ -4,30 +4,30 @@ const SelfIntroduction = ({ nickName, firstName, lastName, dateOfBorn, expectSal
     return (
         <div>
             <div>
-                <p>
+                <div>
                     {nickName}
-                </p>
+                </div>
             </div>
 
             <div>
-                <p>
+                <div>
                     {lastName}, {firstName}
-                </p>
+                </div>
             </div>
 
             <div>
-                <p>
+                <div>
                     {dateOfBorn}
-                </p>
+                </div>
             </div>
 
             <div>
-                <p>Expected Salary:</p>
-                <p>HKD {expectSalary}/ month</p>
+                <div>Expected Salary:</div>
+                <div>HKD {expectSalary}/ month</div>
             </div>
 
             <div>
-                <p>Availability: {availability}</p>
+                <div>Availability: {availability}</div>
             </div>
         </div>
     )

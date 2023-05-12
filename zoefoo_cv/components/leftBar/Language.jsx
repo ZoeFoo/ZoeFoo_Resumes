@@ -4,15 +4,15 @@ const Language = ({ cantonese, english, mandarin }) => {
     return (
         <div>
             <div>
-                <p>Cantonese: {cantonese}</p>
+                <div>Cantonese: {cantonese}</div>
             </div>
 
             <div>
-                <p>English: {english}</p>
+                <div>English: {english}</div>
             </div>
 
             <div>
-                <p>Mandarin: {mandarin}</p>
+                <div>Mandarin: {mandarin}</div>
             </div>
         </div>
     )
