@@ -5,6 +5,7 @@ import Language from '../components/leftBar/Language';
 import Contact from '../components/leftBar/Contact';
 
 import HandsOnExperiences from '../components/rightBar/HandsOnExperiences';
+import ProjectExperiences from '../components/rightBar/ProjectExperiences';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -61,7 +62,36 @@ export default function Home() {
                                     Rhinoceros 3D: Rhino, MatrixGold 3D CAD`} />
                     </div>
 
-                    
+                    <div className='border-2 border-sky-500'>
+                        <div>
+                            <h2>Project Experience</h2>
+                        </div>
+
+                        <div>
+                            <ProjectExperiences
+                                projectName={`Mobile App - TripIdea`}
+                                purpose={`A platform for user to plan travel route for \n themselves flexibly.`}
+                                techSkills={`React Native, Redux, NestJS, Prisma, \n
+                                            SQL, PostgreSQL, Node.js, TypeScript,\n
+                                            Metro, Git, GitHub, npm, yarn,\n
+                                            Visual Studio Code, Visual Studio`} />
+                        </div>
+
+                        <br />
+
+                        <div>
+                            <ProjectExperiences
+                                projectName={`Game of Website - SignUniverse`}
+                                purpose={`A game to make children have fun while \n learning and practicing sign language.`}
+                                techSkills={`HTML5, Bootstrap, p5.js, p5play, Css3, SQL, \n
+                                            PostgreSQL, JavaScript, AJAX, Express, \n
+                                            Node.js, TypeScript, Git, GitHub, npm,\n
+                                            yarn, MediaPipe, Visual Studio Code,\n
+                                            Visual Studio, Adobe Photoshop`} />
+                        </div>
+                    </div>
+
+                    <div className='border-2 border-sky-500'></div>
                 </div>
             </div>
         </main>
