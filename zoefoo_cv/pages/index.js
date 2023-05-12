@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import SelfIntroduction from '../components/leftBar/SelfIntroduction';
 import PersonalQuailities from '../components/leftBar/PersonalQualities';
 import Language from '../components/leftBar/Language';
+import Contact from '../components/leftBar/Contact';
 
 import HandsOnExperiences from '../components/rightBar/HandsOnExperiences';
 
@@ -37,6 +38,12 @@ export default function Home() {
                             english={`Conversational`}
                             mandarin={`Fluent`} />
                     </div>
+
+                    <div className='border-2 border-sky-500'>
+                        <Contact
+                            phone={`+852 5402 6240`}
+                            email={`foochormei335205@gmail.com`} />
+                    </div>
                 </div>
 
                 <div className='rightBar w-3/5 bg-white'>
@@ -54,8 +61,7 @@ export default function Home() {
                                     Rhinoceros 3D: Rhino, MatrixGold 3D CAD`} />
                     </div>
 
-                    <div className='border-2 border-sky-500'>
-                    </div>
+                    
                 </div>
             </div>
         </main>
