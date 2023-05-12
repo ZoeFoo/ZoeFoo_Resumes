@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
     return (
-        <main className='h-screen bg-gradient-to-t from-slate-400 to-white-300'>
-            <div className='page flex flex-nowrap'>
+        <main className='p-5 flex flex-wrap justify-center bg-gradient-to-t from-slate-400 to-white-300'>
+            <div className='page mb-10 flex flex-nowrap'>
                 <div className='leftBar w-2/5 bg-slate-100'>
                     <div className='border-2 border-sky-500'>
                         <SelfIntroduction
@@ -90,12 +90,10 @@ export default function Home() {
                                             Visual Studio, Adobe Photoshop`} />
                         </div>
                     </div>
-
-                    <div className='border-2 border-sky-500'></div>
                 </div>
             </div>
 
-            <div className='page'>
+            <div className='page' >
                 <div>second page</div>
             </div>
         </main>
