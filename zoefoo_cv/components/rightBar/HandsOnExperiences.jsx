@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HandsOnExperiences = ({ skillList }) => {
-    const skills = skillList.split('\n').map((skill,i) => <p key={i}>{skill}</p>);
+    const skills = skillList.split('\n').map((skill,i) => <div key={i}>{skill}</div>);
     return (
         <div>
             <div>

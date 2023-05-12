@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 const ProjectExperiences = ({ projectName, purpose, techSkills }) => {
-    const purposeResult = purpose.split('\n').map((sentence, i) => <p key={i}>{sentence}</p>);
-    const techSkillsResult = techSkills.split('\n').map((skills, i) => <p key={i}>{skills}</p>);
+    const purposeResult = purpose.split('\n').map((sentence, i) => <div key={i}>{sentence}</div>);
+    const techSkillsResult = techSkills.split('\n').map((skills, i) => <div key={i}>{skills}</div>);
 
     return (
         <div>
@@ -15,7 +15,7 @@ const ProjectExperiences = ({ projectName, purpose, techSkills }) => {
             <div>
                 <div className='flex flex-nowrap'>
                     <FontAwesomeIcon icon={faCircle} />
-                    <p>Purpose:</p>
+                    <div>Purpose:</div>
                 </div>
 
                 <div>
@@ -26,11 +26,11 @@ const ProjectExperiences = ({ projectName, purpose, techSkills }) => {
             <div>
                 <div className='flex flex-nowrap'>
                     <FontAwesomeIcon icon={faCircle} />
-                    <p>Tech Skills:</p>
+                    <div>Tech Skills:</div>
                 </div>
 
                 <div>
-                    <p>{techSkillsResult}</p>
+                    <div>{techSkillsResult}</div>
                 </div>
             </div>
         </div>

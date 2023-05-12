@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PersonalQualities = ({ characterList }) => {
-    const characters = characterList.split('\n').map((character, i) => <p key={i}>{character}</p>);
+    const characters = characterList.split('\n').map((character, i) => <div key={i}>{character}</div>);
     return (
         <div>
             <div>

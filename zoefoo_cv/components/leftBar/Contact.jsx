@@ -13,12 +13,12 @@ const Contact = ({ phone, email }) => {
             <div>
                 <div className='flex flex-nowrap'>
                     <FontAwesomeIcon icon={faPhone} />
-                    <p>{phone}</p>
+                    <div>{phone}</div>
                 </div>
 
                 <div className='flex flex-nowrap'>
                     <FontAwesomeIcon icon={faEnvelope} />
-                    <p>{email}</p>
+                    <div>{email}</div>
                 </div>
             </div>
         </div>
