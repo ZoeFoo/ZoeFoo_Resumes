@@ -2,20 +2,21 @@ import React from 'react';
 
 const SelfIntroduction = ({ nickName, firstName, lastName, dateOfBorn, expectSalary, availability }) => {
     return (
-        <div>
+        <div className='text-center'>
             <div>
-                <div>
+                <div className='text-2xl font-bold'>
                     {nickName}
                 </div>
             </div>
 
-            <div>
-                <div>
+            <div class="grid justify-items-stretch">
+                <div className='w-3/5 justify-self-center text-2xl font-bold border-b-2 border-slate-400 drop-shadow-md'>
                     {lastName}, {firstName}
                 </div>
             </div>
 
             <div>
+                <div>Date Of Birth:</div>
                 <div>
                     {dateOfBorn}
                 </div>
