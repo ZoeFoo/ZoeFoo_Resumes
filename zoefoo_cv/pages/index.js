@@ -13,8 +13,8 @@ export default function Home() {
     return (
         <main className='p-5 flex flex-wrap justify-center bg-gradient-to-t from-slate-400 to-white-300'>
             <div className='page mb-10 flex flex-nowrap'>
-                <div className='leftBar w-2/5 bg-slate-100'>
-                    <div className='border-2 border-sky-500'>
+                <div className='leftBar w-2/5 bg-slate-100 grid'>
+                    <div className='border-2 border-sky-500 self-center'>
                         <SelfIntroduction
                             nickName={'Zoe'}
                             lastName={'Chor Mei'}
@@ -25,7 +25,7 @@ export default function Home() {
                         />
                     </div>
 
-                    <div className='border-2 border-sky-500'>
+                    <div className='border-2 border-sky-500 self-center'>
                         <PersonalQuailities
                             characterList={`Interpersonal skills, Flexibility,\n
                             Creativity, Willingness to learn,\n
@@ -33,22 +33,22 @@ export default function Home() {
                             Problem solving, Attention to detail`} />
                     </div>
 
-                    <div className='border-2 border-sky-500'>
+                    <div className='border-2 border-sky-500 self-center'>
                         <Language
                             cantonese={`Native`}
                             english={`Conversational`}
                             mandarin={`Fluent`} />
                     </div>
 
-                    <div className='border-2 border-sky-500'>
+                    <div className='border-2 border-sky-500 self-center'>
                         <Contact
                             phone={`+852 5402 6240`}
                             email={`foochormei335205@gmail.com`} />
                     </div>
                 </div>
 
-                <div className='rightBar w-3/5 bg-white'>
-                    <div className='border-2 border-sky-500'>
+                <div className='rightBar w-3/5 bg-white grid'>
+                    <div className='border-2 border-sky-500 self-center'>
                         <HandsOnExperiences
                             skillList={`HTML5, React JS, React Native, Bootstrap,\n
                                     Css3, SCSS, SASS, Node.js, JavaScript,\n
@@ -62,7 +62,7 @@ export default function Home() {
                                     Rhinoceros 3D: Rhino, MatrixGold 3D CAD`} />
                     </div>
 
-                    <div className='border-2 border-sky-500'>
+                    <div className='border-2 border-sky-500 self-center'>
                         <div>
                             <h2>Project Experience</h2>
                         </div>
