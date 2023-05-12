@@ -24,6 +24,15 @@
     }
 }
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./Montserrat-VariableFont_wght.ttf');
+}
+
+body {
+    font-family: Montserrat;
+}
+
 .page {
     width: 21cm;
     height: 29.7cm;
