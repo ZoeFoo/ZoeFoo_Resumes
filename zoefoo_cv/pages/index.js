@@ -40,7 +40,7 @@ export default function Home() {
                             mandarin={`Fluent`} />
                     </div>
 
-                    <div className='border-2 border-sky-500 self-center'>
+                    <div className='self-center'>
                         <Contact
                             phone={`+852 5402 6240`}
                             email={`foochormei335205@gmail.com`} />
