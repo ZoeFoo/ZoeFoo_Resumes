@@ -9,8 +9,8 @@ const SelfIntroduction = ({ nickName, firstName, lastName, dateOfBorn, expectSal
                 </div>
             </div>
 
-            <div class="grid">
-                <div className='title text-decoration w-4/6 text-2xl pb-2 mb-4'>
+            <div className="grid">
+                <div className='titleCenter text-decoration w-4/6 text-2xl pb-2 mb-4'>
                     {lastName}, {firstName}
                 </div>
             </div>

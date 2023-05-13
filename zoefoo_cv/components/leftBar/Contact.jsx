@@ -8,7 +8,7 @@ const Contact = ({ phone, email }) => {
     return (
         <div className='leading-loose'>
             <div className='grid'>
-                <div className='title text-decoration text-2xl w-4/6 pb-2 mb-4'
+                <div className='titleCenter text-decoration text-2xl w-4/6 pb-2 mb-4'
                     style={{ letterSpacing: 8 }}>CONTACT</div>
             </div>
 

@@ -4,7 +4,7 @@ const Language = ({ cantonese, english, mandarin }) => {
     return (
         <div className='text-center leading-loose'>
             <div className='grid'>
-                <div className='title text-decoration w-4/5 text-2xl pb-2 mb-4'
+                <div className='titleCenter text-decoration w-4/5 text-2xl pb-2 mb-4'
                     style={{ letterSpacing: 8 }}
                 >LANGUAGE</div>
             </div>

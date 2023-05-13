@@ -5,8 +5,8 @@ const HandsOnExperiences = ({ skillList }) => {
     return (
         <div className='leading-loose'>
             <div>
-                <div className='title text-decoration w-4/6 text-xl pb-2 mb-4'
-                    style={{ letterSpacing: 2 }}
+                <div className='titleCenter text-decoration text-xl pb-2 mb-4'
+                    style={{ width: 330,letterSpacing: 2 }}
                 >Hands-on Experiences</div>
             </div>
 

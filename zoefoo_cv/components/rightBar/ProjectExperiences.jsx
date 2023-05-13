@@ -7,15 +7,19 @@ const ProjectExperiences = ({ projectName, purpose, techSkills }) => {
     const techSkillsResult = techSkills.split('\n').map((skills, i) => <div key={i}>{skills}</div>);
 
     return (
-        <div>
+        <div className='leading-loose ps-6'>
             <div>
-                <h2>{projectName}</h2>
+                <div className='rightBarTitle text-lg'>{projectName}</div>
             </div>
 
             <div>
                 <div className='flex flex-nowrap'>
-                    <FontAwesomeIcon icon={faCircle} />
-                    <div>Purpose:</div>
+                    <div className='-ms-4'>
+                        <FontAwesomeIcon
+                            icon={faCircle}
+                            style={{ width: 5 }} />
+                    </div>
+                    <div className='ps-3'>Purpose:</div>
                 </div>
 
                 <div>
@@ -25,8 +29,12 @@ const ProjectExperiences = ({ projectName, purpose, techSkills }) => {
 
             <div>
                 <div className='flex flex-nowrap'>
-                    <FontAwesomeIcon icon={faCircle} />
-                    <div>Tech Skills:</div>
+                    <div className='-ms-4'>
+                        <FontAwesomeIcon
+                            icon={faCircle}
+                            style={{ width: 5 }} />
+                    </div>
+                    <div className='ps-3'>Tech Skills:</div>
                 </div>
 
                 <div>

@@ -62,9 +62,11 @@ export default function Home() {
                                     Rhinoceros 3D: Rhino, MatrixGold 3D CAD`} />
                     </div>
 
-                    <div className='border-2 border-sky-500 self-center'>
+                    <div className='self-center'>
                         <div>
-                            <h2>Project Experience</h2>
+                            <div className='titleCenter text-decoration w-4/6 text-xl'
+                                style={{ letterSpacing: 2 }}
+                            >Project Experiences</div>
                         </div>
 
                         <div>
