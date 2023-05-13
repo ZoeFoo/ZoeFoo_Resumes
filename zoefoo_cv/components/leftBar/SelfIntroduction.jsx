@@ -2,7 +2,7 @@ import React from 'react';
 
 const SelfIntroduction = ({ nickName, firstName, lastName, dateOfBorn, expectSalary, availability }) => {
     return (
-        <div className='text-center'>
+        <div className='text-center leading-loose'>
             <div>
                 <div className='text-2xl font-bold'>
                     {nickName}

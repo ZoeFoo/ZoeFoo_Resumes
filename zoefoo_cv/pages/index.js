@@ -33,7 +33,7 @@ export default function Home() {
                             Problem solving, Attention to detail`} />
                     </div>
 
-                    <div className='border-2 border-sky-500 self-center'>
+                    <div className='self-center'>
                         <Language
                             cantonese={`Native`}
                             english={`Conversational`}
