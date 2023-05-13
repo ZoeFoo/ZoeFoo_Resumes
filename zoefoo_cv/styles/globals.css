@@ -46,8 +46,13 @@ body {
     border-bottom: 2px solid #8f8f8f;
 }
 
-.title {
+.titleCenter {
     font-weight: bold;
     text-align: center;
+    justify-self: center;
+}
+
+.rightBarTitle {
+    font-weight: bold;
     justify-self: center;
 }

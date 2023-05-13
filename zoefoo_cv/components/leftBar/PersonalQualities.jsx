@@ -6,7 +6,7 @@ const PersonalQualities = ({ characterList }) => {
         <div className='text-center leading-loose'>
             <div className='grid'
                 style={{ letterSpacing: 1 }}>
-                <div className='title text-decoration w-5/6 text-xl pb-2 mb-4'>PERSONAL QUALITIES</div>
+                <div className='titleCenter text-decoration w-5/6 text-xl pb-2 mb-4'>PERSONAL QUALITIES</div>
             </div>
 
             <div>
