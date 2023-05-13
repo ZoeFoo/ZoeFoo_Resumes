@@ -14,7 +14,7 @@ export default function Home() {
         <main className='p-5 flex flex-wrap justify-center bg-gradient-to-t from-slate-400 to-white-300'>
             <div className='page mb-10 flex flex-nowrap'>
                 <div className='leftBar w-2/5 bg-slate-100 grid'>
-                    <div className='border-2 border-sky-500 self-center'>
+                    <div className='self-center'>
                         <SelfIntroduction
                             nickName={'Zoe'}
                             lastName={'Chor Mei'}
@@ -25,7 +25,7 @@ export default function Home() {
                         />
                     </div>
 
-                    <div className='border-2 border-sky-500 self-center'>
+                    <div className='self-center'>
                         <PersonalQuailities
                             characterList={`Interpersonal skills, Flexibility,\n
                             Creativity, Willingness to learn,\n
