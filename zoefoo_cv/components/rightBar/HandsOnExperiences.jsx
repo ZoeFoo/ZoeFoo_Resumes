@@ -1,15 +1,17 @@
 import React from 'react';
 
 const HandsOnExperiences = ({ skillList }) => {
-    const skills = skillList.split('\n').map((skill,i) => <div key={i}>{skill}</div>);
+    const skills = skillList.split('\n').map((skill, i) => <div key={i}>{skill}</div>);
     return (
-        <div>
+        <div className='leading-loose'>
             <div>
-                <h2>Hands-on Experiences</h2>
+                <div className='title text-decoration w-4/6 text-xl pb-2 mb-4'
+                    style={{ letterSpacing: 2 }}
+                >Hands-on Experiences</div>
             </div>
 
-            <div>
-                <div>{skills}</div>
+            <div className='ms-3'>
+                <div style={{ letterSpacing:1 }}>{skills}</div>
             </div>
         </div>
     )

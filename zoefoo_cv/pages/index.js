@@ -47,8 +47,8 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className='rightBar w-3/5 bg-white grid'>
-                    <div className='border-2 border-sky-500 self-center'>
+                <div className='rightBar w-3/5 bg-white grid ms-10'>
+                    <div className='self-center'>
                         <HandsOnExperiences
                             skillList={`HTML5, React JS, React Native, Bootstrap,\n
                                     Css3, SCSS, SASS, Node.js, JavaScript,\n
