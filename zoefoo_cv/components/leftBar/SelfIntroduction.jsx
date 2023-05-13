@@ -9,8 +9,8 @@ const SelfIntroduction = ({ nickName, firstName, lastName, dateOfBorn, expectSal
                 </div>
             </div>
 
-            <div class="grid justify-items-stretch">
-                <div className='w-3/5 justify-self-center text-2xl font-bold border-b-2 border-slate-400 drop-shadow-md'>
+            <div class="grid">
+                <div className='title text-decoration w-4/6 text-2xl pb-2 mb-4'>
                     {lastName}, {firstName}
                 </div>
             </div>
