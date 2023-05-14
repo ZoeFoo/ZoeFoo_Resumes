@@ -99,7 +99,7 @@ export default function Home() {
             <div className='page p-20' >
                 <div>
                     <div className='titleCenter text-decoration text-xl pb-2 mb-4'
-                        style={{width: 200, letterSpacing: 3 }}
+                        style={{ width: 200, letterSpacing: 3 }}
                     >Education</div>
 
                     <div>
@@ -128,6 +128,11 @@ export default function Home() {
                 </div>
 
                 <div>
+                    <div>
+                        <div className='rightBarTitle text-decoration text-xl ps-8 py-2 my-4'
+                            style={{ width: 300,letterSpacing:3 }}>Work Experiences</div>
+                    </div>
+
                     <div>
                         <WorkExperience
                             companyName={`Citychamp Watch & Jewellery Group Limited`}
