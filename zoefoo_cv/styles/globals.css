@@ -21,6 +21,7 @@
         size: portrait;
         size: A4;
         margin: 0 !important;
+        padding: 0 !important;
     }
 }
 
@@ -38,7 +39,7 @@ body {
     height: 29.7cm;
     background: white;
     box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-    page-break-inside: avoid;
+    /*page-break-inside: avoid;*/
 }
 
 .text-decoration {

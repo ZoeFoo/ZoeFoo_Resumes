@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
     return (
-        <main className='p-5 flex flex-wrap justify-center bg-gradient-to-t from-slate-400 to-white-300'>
+        <main className='p-5 grid justify-items-center bg-gradient-to-t from-slate-400 to-white-300'>
             <div className='page mb-10 flex flex-nowrap'>
                 <div className='leftBar w-2/5 bg-slate-100 grid'>
                     <div className='self-center'>
