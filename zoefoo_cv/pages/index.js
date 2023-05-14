@@ -6,6 +6,7 @@ import Contact from '../components/leftBar/Contact';
 import HandsOnExperiences from '../components/rightBar/HandsOnExperiences';
 import ProjectExperiences from '../components/rightBar/ProjectExperiences';
 import Education from '../components/nextPage/Education';
+import WorkExperience from '../components/nextPage/WorkExperience';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -121,7 +122,24 @@ export default function Home() {
                             dateEnd={`2016`}
                             graduationPosition={`Diploma in Vocational Education - Jewellery Asts and Design`} />
                     </div>
+                </div>
 
+                <div>
+                    <div>
+                        <WorkExperience
+                            companyName={`Citychamp Watch & Jewellery Group Limited`}
+                            dateFrom={`11/2019`}
+                            dateEnd={`12/2022`}
+                            position={`Receptionist  (Full-time)`} />
+                    </div>
+
+                    <div>
+                        <WorkExperience
+                            companyName={`MCL Cinemas`}
+                            dateFrom={`2016`}
+                            dateEnd={`6/2019`}
+                            position={`Cinema Staff  (Part-time)`} />
+                    </div>
                 </div>
             </div>
         </main>
