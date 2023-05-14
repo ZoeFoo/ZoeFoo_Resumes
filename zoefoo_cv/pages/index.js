@@ -3,9 +3,9 @@ import SelfIntroduction from '../components/leftBar/SelfIntroduction';
 import PersonalQuailities from '../components/leftBar/PersonalQualities';
 import Language from '../components/leftBar/Language';
 import Contact from '../components/leftBar/Contact';
-
 import HandsOnExperiences from '../components/rightBar/HandsOnExperiences';
 import ProjectExperiences from '../components/rightBar/ProjectExperiences';
+import Education from '../components/nextPage/Education';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -96,7 +96,33 @@ export default function Home() {
             </div>
 
             <div className='page' >
-                <div>second page</div>
+                <div>
+                    <div>Education</div>
+                    <div>
+                        <Education
+                            graduationFrom={`Tecky Academy`}
+                            dateFrom={`12/2022`}
+                            dateEnd={`04/2023`}
+                            graduationPosition={`MicroMaster in A.I. and Programming`} />
+                    </div>
+
+                    <div>
+                        <Education
+                            graduationFrom={`Hong Kong Design Institute`}
+                            dateFrom={`2016`}
+                            dateEnd={`2019`}
+                            graduationPosition={`Higher Diploma in Jewellery Design and Technology`} />
+                    </div>
+
+                    <div>
+                        <Education
+                            graduationFrom={`The Hong Kong Institute of Vocational Education`}
+                            dateFrom={`2013`}
+                            dateEnd={`2016`}
+                            graduationPosition={`Diploma in Vocational Education - Jewellery Asts and Design`} />
+                    </div>
+
+                </div>
             </div>
         </main>
     )
