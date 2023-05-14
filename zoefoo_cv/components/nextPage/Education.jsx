@@ -4,22 +4,24 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Education = ({ graduationFrom, dateFrom, dateEnd, graduationPosition }) => {
     return (
-        <div>
-            <div>
+        <div className='leading-loose'>
+            <div className='flex flex-nowrap'>
                 <div>
                     <FontAwesomeIcon
                         icon={faCircle}
                         style={{ width: 5 }} />
                 </div>
 
-                <div>{graduationFrom}</div>
+                <div className='ps-7 pe-3 text-lg font-bold'>
+                    {graduationFrom}
+                </div>
 
                 <div>
                     ({dateFrom} - {dateEnd})
                 </div>
             </div>
 
-            <div>
+            <div className='ps-7'>
                 {graduationPosition}
             </div>
         </div>

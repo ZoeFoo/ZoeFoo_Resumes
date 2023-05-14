@@ -96,9 +96,12 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className='page' >
+            <div className='page p-20' >
                 <div>
-                    <div>Education</div>
+                    <div className='titleCenter text-decoration text-xl pb-2 mb-4'
+                        style={{width: 200, letterSpacing: 3 }}
+                    >Education</div>
+
                     <div>
                         <Education
                             graduationFrom={`Tecky Academy`}
