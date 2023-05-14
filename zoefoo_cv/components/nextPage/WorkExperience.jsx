@@ -12,7 +12,7 @@ const WorkExperience = ({ companyName, dateFrom, dateEnd, position }) => {
                         style={{ width: 5 }} />
                 </div>
 
-                <div className='rightBarTitle ps-6 pe-3'>{companyName}</div>
+                <div className='rightBarTitle ps-7 pe-3'>{companyName}</div>
 
                 <div>
                     ({dateFrom} - {dateEnd})
@@ -20,7 +20,7 @@ const WorkExperience = ({ companyName, dateFrom, dateEnd, position }) => {
             </div>
 
             <div className='flex flex-wrap'>
-                <div className='ps-7'>Position: </div>
+                <div className='ps-8'>Position: </div>
 
                 <div>
                     {position}

@@ -21,7 +21,7 @@ const Education = ({ graduationFrom, dateFrom, dateEnd, graduationPosition }) =>
                 </div>
             </div>
 
-            <div className='ps-7'>
+            <div className='ps-8'>
                 {graduationPosition}
             </div>
         </div>
