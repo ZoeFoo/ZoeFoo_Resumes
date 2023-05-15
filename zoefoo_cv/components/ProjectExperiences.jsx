@@ -2,43 +2,56 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
-const ProjectExperiences = ({ projectName, purpose, techSkills }) => {
+const ProjectExperiences = ({ project: { name, purpose, skills } }) => {
     const purposeResult = purpose.split('\n').map((sentence, i) => <div key={i}>{sentence}</div>);
-    const techSkillsResult = techSkills.split('\n').map((skills, i) => <div key={i}>{skills}</div>);
 
     return (
-        <div className='leading-loose ps-6'>
+        <div className='leading-loose pt-4'>
             <div>
-                <div className='rightBarTitle text-lg'>{projectName}</div>
+                <div className='text-lg font-semibold ps-5'>
+                    {name}
+                </div>
             </div>
 
             <div>
                 <div className='flex flex-nowrap'>
-                    <div className='-ms-4'>
+                    <div>
                         <FontAwesomeIcon
                             icon={faCircle}
                             style={{ width: 5 }} />
                     </div>
-                    <div className='ps-3'>Purpose:</div>
+
+                    <div className='ps-4'>
+                        Purpose:
+                    </div>
                 </div>
 
-                <div>
+                <div className='ps-6'>
                     {purposeResult}
                 </div>
             </div>
 
             <div>
                 <div className='flex flex-nowrap'>
-                    <div className='-ms-4'>
+                    <div>
                         <FontAwesomeIcon
                             icon={faCircle}
                             style={{ width: 5 }} />
                     </div>
-                    <div className='ps-3'>Tech Skills:</div>
+
+                    <div className='ps-4'>
+                        Tech Skills:
+                    </div>
                 </div>
 
                 <div>
-                    <div>{techSkillsResult}</div>
+                    <div className='ps-6'>
+                        {
+                            skills.map((skill, i) => (
+                                <div key={i}>{skill}</div>
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
         </div>

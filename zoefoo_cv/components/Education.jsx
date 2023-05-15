@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
-const Education = ({ graduationFrom, dateFrom, dateEnd, graduationPosition }) => {
+const Education = ({ education: { name, dateStart, dateEnd, position } }) => {
     return (
         <div className='leading-loose'>
             <div className='flex flex-nowrap'>
@@ -12,17 +12,17 @@ const Education = ({ graduationFrom, dateFrom, dateEnd, graduationPosition }) =>
                         style={{ width: 5 }} />
                 </div>
 
-                <div className='ps-7 pe-3 text-lg font-bold'>
-                    {graduationFrom}
+                <div className='ps-7 pe-3 text-lg font-semibold'>
+                    {name}
                 </div>
 
                 <div>
-                    ({dateFrom} - {dateEnd})
+                    ({dateStart} - {dateEnd})
                 </div>
             </div>
 
             <div className='ps-8'>
-                {graduationPosition}
+                {position}
             </div>
         </div>
     )
