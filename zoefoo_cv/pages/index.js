@@ -109,7 +109,7 @@ export default function Home() {
         <div className='bg-gradient-to-t from-slate-400 to-white-300'>
             <div className="flex justify-center p-5 print:p-0">
                 <div className='page flex flex-nowrap'>
-                    <div className='flex flex-col justify-between py-[50px] w-2/5 bg-slate-100'>
+                    <div className='flex flex-col justify-around w-2/5 bg-slate-100'>
                         <div>
                             <SelfIntroduction person={person} />
                         </div>
