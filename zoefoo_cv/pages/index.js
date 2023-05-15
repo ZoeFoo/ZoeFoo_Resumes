@@ -50,6 +50,7 @@ export default function Home() {
                 " i18n-js,react-native-maps,",
                 "Metro, Git, GitHub, yarn, Visual Studio",
             ],
+            link: "https://github.com/ZoeFoo/MoblieApp-Real-time-Arrival-Bus-App",
         }, {
             name: "Mobile App - TripIdea",
             purpose: "A platform for user to plan travel route for \n themselves flexibly.",
@@ -59,6 +60,7 @@ export default function Home() {
                 "Metro, Git, GitHub, npm, yarn,",
                 "Visual Studio Code, Visual Studio",
             ],
+            link: "",
         }, {
             name: "Game of Website - SignUniverse",
             purpose: "A game to make children have fun while \n learning and practicing sign language.",
@@ -69,6 +71,7 @@ export default function Home() {
                 "yarn, MediaPipe, Visual Studio Code,",
                 "Visual Studio, Adobe Photoshop",
             ],
+            link: "",
         },
     ];
     const educations = [
