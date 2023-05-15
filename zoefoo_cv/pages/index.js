@@ -127,7 +127,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className='flex flex-col justify-between my-[50px] px-[25px] bg-white'>
+                    <div className='flex flex-col justify-between w-3/5 my-[50px] px-[25px] bg-white'>
                         <div>
                             <HandsOnExperiences list={skills} />
                         </div>
