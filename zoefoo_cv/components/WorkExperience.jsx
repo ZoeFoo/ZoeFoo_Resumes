@@ -9,7 +9,7 @@ const WorkExperience = ({work:{ name, dateStart, dateEnd, position }}) => {
                 <div>
                     <FontAwesomeIcon
                         icon={faCircle}
-                        style={{ width: 5 }} />
+                        className='w-[5px]' />
                 </div>
 
                 <div className='font-semibold ps-7 pe-3'>
