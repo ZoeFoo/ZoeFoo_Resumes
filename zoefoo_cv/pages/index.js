@@ -1,11 +1,11 @@
-import SelfIntroduction from '@/components/leftBar/SelfIntroduction';
-import PersonalQuailities from '@/components/leftBar/PersonalQualities';
-import Language from '@/components/leftBar/Language';
-import Contact from '@/components/leftBar/Contact';
-import HandsOnExperiences from '@/components/rightBar/HandsOnExperiences';
-import ProjectExperiences from '@/components/rightBar/ProjectExperiences';
-import Education from '@/components/nextPage/Education';
-import WorkExperience from '@/components/nextPage/WorkExperience';
+import SelfIntroduction from '@/components/SelfIntroduction';
+import PersonalQuailities from '@/components/PersonalQualities';
+import Language from '@/components/Language';
+import Contact from '@/components/Contact';
+import HandsOnExperiences from '@/components/HandsOnExperiences';
+import ProjectExperiences from '@/components/ProjectExperiences';
+import Education from '@/components/Education';
+import WorkExperience from '@/components/WorkExperience';
 
 export default function Home() {
     const person = {
@@ -31,7 +31,71 @@ export default function Home() {
         phone: "+852 5402 6240",
         email: "foochormei335205@gmail.com",
     };
-
+    const skills = [
+        "HTML5, React JS, React Native, Bootstrap",
+        "Css3, SCSS, SASS, Node.js, JavaScript,",
+        "TypeScript, AJAX, Express, Redux, NestJS,",
+        "Prisma, SQL, NoSQL, PostgreSQL, MsSQL,",
+        "MongoDb, Metro, Git, GitFlow, GitHub,",
+        "GitLab, BitBucket, npm, yarn, Python,",
+        "p5.js, p5play, MediaPipe, AWS Machine",
+        "Learning, Visual Studio Code, Visual Studio,",
+        "Adobe AI / Photoshop / Dreamweaver,",
+        "Rhinoceros 3D: Rhino, MatrixGold 3D CAD",
+    ];
+    const projects = [
+        {
+            name: "Mobile App - TripIdea",
+            purpose: "A platform for user to plan travel route for \n themselves flexibly.",
+            skills: [
+                "React Native, Redux, NestJS, Prisma,",
+                "SQL, PostgreSQL, Node.js, TypeScript,",
+                "Metro, Git, GitHub, npm, yarn,",
+                "Visual Studio Code, Visual Studio",
+            ],
+        }, {
+            name: "Game of Website - SignUniverse",
+            purpose: "A game to make children have fun while \n learning and practicing sign language.",
+            skills: [
+                "HTML5, Bootstrap, p5.js, p5play, Css3, SQL,",
+                "PostgreSQL, JavaScript, AJAX, Express,",
+                "Node.js, TypeScript, Git, GitHub, npm,",
+                "yarn, MediaPipe, Visual Studio Code,",
+                "Visual Studio, Adobe Photoshop",
+            ],
+        },
+    ];
+    const educations = [
+        {
+            name: "Tecky Academy",
+            dateStart: "12/2022",
+            dateEnd: "04/2023",
+            position: "MicroMaster in A.I. and Programming",
+        }, {
+            name: "Hong Kong Design Institute",
+            dateStart: "2016",
+            dateEnd: "2019",
+            position: "Higher Diploma in Jewellery Design and Technology",
+        }, {
+            name: "The Hong Kong Institute of Vocational Education",
+            dateStart: "2013",
+            dateEnd: "2016",
+            position: "Diploma in Vocational Education - Jewellery Asts and Design",
+        }
+    ];
+    const works = [
+        {
+            name: "Citychamp Watch & Jewellery Group Limited",
+            dateStart: "11/2019",
+            dateEnd: "12 / 2022",
+            position: "Receptionist  (Full-time)",
+        }, {
+            name: "MCL Cinemas",
+            dateStart: "2016",
+            dateEnd: "6/2019",
+            position: "Cinema Staff  (Part-time)",
+        }
+    ];
     return (
         <div className='bg-gradient-to-t from-slate-400 to-white-300'>
             <div className="flex justify-center p-5 print:p-0">
@@ -54,49 +118,25 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className='flex flex-col justify-between py-[40px] w-3/5 bg-white'>
-                        <div className='self-center'>
-                            <HandsOnExperiences
-                                skillList={`HTML5, React JS, React Native, Bootstrap,\n
-                                    Css3, SCSS, SASS, Node.js, JavaScript,\n
-                                    TypeScript, AJAX, Express, Redux, NestJS, \n
-                                    Prisma, SQL, NoSQL, PostgreSQL, MsSQL, \n
-                                    MongoDb, Metro, Git, GitFlow, GitHub,\n
-                                    GitLab, BitBucket, npm, yarn, Python, \n
-                                    p5.js, p5play, MediaPipe, AWS Machine \n
-                                    Learning, Visual Studio Code, Visual Studio,\n
-                                    Adobe AI/ Photoshop/ Dreamweaver, \n
-                                    Rhinoceros 3D: Rhino, MatrixGold 3D CAD`} />
+                    <div className='flex flex-col justify-between py-[25px] px-[25px] bg-white'>
+                        <div>
+                            <HandsOnExperiences list={skills} />
                         </div>
 
-                        <div className='self-center'>
-                            <div>
-                                <div className='titleCenter text-decoration w-4/6 text-xl'
-                                    style={{ letterSpacing: 2 }}
-                                >Project Experiences</div>
+                        <div>
+                            <div className='inline-block'>
+                                <div className='text-decoration text-xl font-bold px-5 pb-2'
+                                    style={{ letterSpacing: 2 }} >
+                                    Project Experiences
+                                </div>
                             </div>
 
                             <div>
-                                <ProjectExperiences
-                                    projectName={`Mobile App - TripIdea`}
-                                    purpose={`A platform for user to plan travel route for \n themselves flexibly.`}
-                                    techSkills={`React Native, Redux, NestJS, Prisma, \n
-                                            SQL, PostgreSQL, Node.js, TypeScript,\n
-                                            Metro, Git, GitHub, npm, yarn,\n
-                                            Visual Studio Code, Visual Studio`} />
-                            </div>
-
-                            <br />
-
-                            <div>
-                                <ProjectExperiences
-                                    projectName={`Game of Website - SignUniverse`}
-                                    purpose={`A game to make children have fun while \n learning and practicing sign language.`}
-                                    techSkills={`HTML5, Bootstrap, p5.js, p5play, Css3, SQL, \n
-                                            PostgreSQL, JavaScript, AJAX, Express, \n
-                                            Node.js, TypeScript, Git, GitHub, npm,\n
-                                            yarn, MediaPipe, Visual Studio Code,\n
-                                            Visual Studio, Adobe Photoshop`} />
+                                {
+                                    projects.map((project, i) => (
+                                        <ProjectExperiences key={i} project={project} />
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
@@ -106,55 +146,35 @@ export default function Home() {
             <div className="flex justify-center p-5 print:p-0">
                 <div className='page p-20' >
                     <div>
-                        <div className='titleCenter text-decoration text-xl pb-2 mb-4'
-                            style={{ width: 200, letterSpacing: 3 }}
-                        >Education</div>
-
-                        <div>
-                            <Education
-                                graduationFrom={`Tecky Academy`}
-                                dateFrom={`12/2022`}
-                                dateEnd={`04/2023`}
-                                graduationPosition={`MicroMaster in A.I. and Programming`} />
+                        <div className='text-decoration text-xl font-bold inline-block px-8 pb-2 mb-4'
+                            style={{ letterSpacing: 3 }}>
+                            Education
                         </div>
-
                         <div>
-                            <Education
-                                graduationFrom={`Hong Kong Design Institute`}
-                                dateFrom={`2016`}
-                                dateEnd={`2019`}
-                                graduationPosition={`Higher Diploma in Jewellery Design and Technology`} />
-                        </div>
-
-                        <div>
-                            <Education
-                                graduationFrom={`The Hong Kong Institute of Vocational Education`}
-                                dateFrom={`2013`}
-                                dateEnd={`2016`}
-                                graduationPosition={`Diploma in Vocational Education - Jewellery Asts and Design`} />
+                            {
+                                educations.map((education, i) => (
+                                    <Education key={i}
+                                        education={education} />
+                                ))
+                            }
                         </div>
                     </div>
 
                     <div>
                         <div>
-                            <div className='rightBarTitle text-decoration text-xl ps-8 py-2 my-4'
-                                style={{ width: 300, letterSpacing: 3 }}>Work Experiences</div>
+                            <div className='text-decoration text-xl font-bold inline-block px-8 py-2 my-4'
+                                style={{ letterSpacing: 3 }}>
+                                Work Experiences
+                            </div>
                         </div>
 
                         <div>
-                            <WorkExperience
-                                companyName={`Citychamp Watch & Jewellery Group Limited`}
-                                dateFrom={`11/2019`}
-                                dateEnd={`12/2022`}
-                                position={`Receptionist  (Full-time)`} />
-                        </div>
-
-                        <div>
-                            <WorkExperience
-                                companyName={`MCL Cinemas`}
-                                dateFrom={`2016`}
-                                dateEnd={`6/2019`}
-                                position={`Cinema Staff  (Part-time)`} />
+                            {
+                                works.map((work, i) => (
+                                    <WorkExperience key={i}
+                                        work={work} />
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
