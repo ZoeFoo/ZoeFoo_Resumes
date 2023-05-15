@@ -6,8 +6,8 @@ const Contact = ({ contact: { phone, email } }) => {
     return (
         <div className='leading-loose'>
             <div className='text-center px-[50px]'>
-                <div className='font-bold text-decoration text-xl pb-2 mb-4'
-                    style={{ letterSpacing: 1 }}>CONTACT</div>
+                <div className='font-bold text-decoration text-xl tracking-[2px] pb-2 mb-4'>
+                    CONTACT</div>
             </div>
 
             <div>
