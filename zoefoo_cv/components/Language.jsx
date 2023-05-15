@@ -4,9 +4,9 @@ const Language = ({ languages: { cantonese, english, mandarin } }) => {
     return (
         <div className='text-center leading-loose'>
             <div className='px-[50px]'>
-                <div className='font-bold text-decoration text-xl pb-2 mb-4'
-                    style={{ letterSpacing: 1 }}
-                >LANGUAGE</div>
+                <div className='font-bold text-decoration text-xl tracking-[2px] pb-2 mb-4'>
+                    LANGUAGE
+                </div>
             </div>
 
             <div>

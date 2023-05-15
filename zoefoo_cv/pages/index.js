@@ -125,8 +125,7 @@ export default function Home() {
 
                         <div>
                             <div className='inline-block'>
-                                <div className='text-decoration text-xl font-bold px-5 pb-2'
-                                    style={{ letterSpacing: 2 }} >
+                                <div className='text-decoration text-xl font-bold tracking-[2px] px-5 pb-2' >
                                     Project Experiences
                                 </div>
                             </div>
@@ -146,8 +145,7 @@ export default function Home() {
             <div className="flex justify-center p-5 print:p-0">
                 <div className='page p-20' >
                     <div>
-                        <div className='text-decoration text-xl font-bold inline-block px-8 pb-2 mb-4'
-                            style={{ letterSpacing: 3 }}>
+                        <div className='text-decoration text-xl font-bold inline-block tracking-[2px] px-8 pb-2 mb-4'>
                             Education
                         </div>
                         <div>
@@ -162,8 +160,7 @@ export default function Home() {
 
                     <div>
                         <div>
-                            <div className='text-decoration text-xl font-bold inline-block px-8 py-2 my-4'
-                                style={{ letterSpacing: 3 }}>
+                            <div className='text-decoration text-xl font-bold inline-block tracking-[2px] px-8 py-2 my-4'>
                                 Work Experiences
                             </div>
                         </div>
