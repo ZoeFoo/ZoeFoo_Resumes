@@ -43,6 +43,14 @@ export default function Home() {
     ];
     const projects = [
         {
+            name: "Mobile App - Real-time Arrival Bus App",
+            purpose: "A mobile app that shows real-time bus arrival information.",
+            skills: [
+                "React Native, Redux, Node.js,",
+                " i18n-js,react-native-maps,",
+                "Metro, Git, GitHub, yarn, Visual Studio",
+            ],
+        }, {
             name: "Mobile App - TripIdea",
             purpose: "A platform for user to plan travel route for \n themselves flexibly.",
             skills: [
@@ -130,7 +138,7 @@ export default function Home() {
 
                             <div>
                                 {
-                                    projects.map((project, i) => (
+                                    projects.slice(0, 2).map((project, i) => (
                                         <ProjectExperiences key={i} project={project} />
                                     ))
                                 }
@@ -143,6 +151,22 @@ export default function Home() {
             <div className="flex justify-center p-5 print:p-0">
                 <div className='page' >
                     <div className='p-20'>
+                        <div className='pb-10'>
+                            <div className='inline-block'>
+                                <div className='text-decoration text-xl font-bold tracking-[2px] px-5 pb-2' >
+                                    Project Experiences
+                                </div>
+                            </div>
+
+                            <div>
+                                {
+                                    projects.slice(2, projects.length).map((project, i) => (
+                                        <ProjectExperiences key={i} project={project} />
+                                    ))
+                                }
+                            </div>
+                        </div>
+
                         <div>
                             <div className='text-decoration text-xl font-bold inline-block tracking-[2px] px-8 pb-2 mb-4'>
                                 Education
