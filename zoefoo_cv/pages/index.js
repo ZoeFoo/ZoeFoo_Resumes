@@ -98,7 +98,7 @@ export default function Home() {
         <div className='bg-gradient-to-t from-slate-400 to-white-300'>
             <div className="flex justify-center p-5 print:p-0">
                 <div className='page flex flex-nowrap'>
-                    <div className='flex flex-col justify-between py-[40px] w-2/5 bg-slate-100'>
+                    <div className='flex flex-col justify-between py-[50px] w-2/5 bg-slate-100'>
                         <div>
                             <SelfIntroduction person={person} />
                         </div>
@@ -116,7 +116,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className='flex flex-col justify-between py-[25px] px-[25px] bg-white'>
+                    <div className='flex flex-col justify-between my-[50px] px-[25px] bg-white'>
                         <div>
                             <HandsOnExperiences list={skills} />
                         </div>
@@ -141,35 +141,37 @@ export default function Home() {
             </div>
 
             <div className="flex justify-center p-5 print:p-0">
-                <div className='page p-20' >
-                    <div>
-                        <div className='text-decoration text-xl font-bold inline-block tracking-[2px] px-8 pb-2 mb-4'>
-                            Education
-                        </div>
+                <div className='page' >
+                    <div className='p-20'>
                         <div>
-                            {
-                                educations.map((education, i) => (
-                                    <Education key={i}
-                                        education={education} />
-                                ))
-                            }
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <div className='text-decoration text-xl font-bold inline-block tracking-[2px] px-8 py-2 my-4'>
-                                Work Experiences
+                            <div className='text-decoration text-xl font-bold inline-block tracking-[2px] px-8 pb-2 mb-4'>
+                                Education
+                            </div>
+                            <div>
+                                {
+                                    educations.map((education, i) => (
+                                        <Education key={i}
+                                            education={education} />
+                                    ))
+                                }
                             </div>
                         </div>
 
                         <div>
-                            {
-                                works.map((work, i) => (
-                                    <WorkExperience key={i}
-                                        work={work} />
-                                ))
-                            }
+                            <div>
+                                <div className='text-decoration text-xl font-bold inline-block tracking-[2px] px-8 py-2 my-4'>
+                                    Work Experiences
+                                </div>
+                            </div>
+
+                            <div>
+                                {
+                                    works.map((work, i) => (
+                                        <WorkExperience key={i}
+                                            work={work} />
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
