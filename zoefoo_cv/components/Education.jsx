@@ -9,7 +9,7 @@ const Education = ({ education: { name, dateStart, dateEnd, position } }) => {
                 <div>
                     <FontAwesomeIcon
                         icon={faCircle}
-                        style={{ width: 5 }} />
+                        className='w-[5px]' />
                 </div>
 
                 <div className='ps-7 pe-3 text-lg font-semibold'>

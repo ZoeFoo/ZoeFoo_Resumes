@@ -18,7 +18,7 @@ const ProjectExperiences = ({ project: { name, purpose, skills } }) => {
                     <div>
                         <FontAwesomeIcon
                             icon={faCircle}
-                            style={{ width: 5 }} />
+                            className='w-[5px]' />
                     </div>
 
                     <div className='ps-4'>
@@ -36,7 +36,7 @@ const ProjectExperiences = ({ project: { name, purpose, skills } }) => {
                     <div>
                         <FontAwesomeIcon
                             icon={faCircle}
-                            style={{ width: 5 }} />
+                            className='w-[5px]' />
                     </div>
 
                     <div className='ps-4'>
