@@ -1,16 +1,23 @@
 import React from 'react';
 
-const PersonalQualities = ({ characterList }) => {
-    const characters = characterList.split('\n').map((character, i) => <div key={i}>{character}</div>);
+const PersonalQualities = ({ list }) => {
     return (
         <div className='text-center leading-loose'>
-            <div className='grid'
+            <div className='px-[20px]'
                 style={{ letterSpacing: 1 }}>
-                <div className='titleCenter text-decoration w-5/6 text-xl pb-2 mb-4'>PERSONAL QUALITIES</div>
+                <div className='font-bold text-decoration text-xl pb-2 mb-4'>
+                    PERSONAL QUALITIES
+                </div>
             </div>
 
             <div>
-                <div>{characters}</div>
+                <div>
+                    {
+                        list.map((character, i) => (
+                            <div key={i}>{character}</div>)
+                        )
+                    }
+                </div>
             </div>
         </div>
     )

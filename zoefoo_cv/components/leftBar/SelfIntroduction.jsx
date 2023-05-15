@@ -1,6 +1,8 @@
 import React from 'react';
 
-const SelfIntroduction = ({ nickName, firstName, lastName, dateOfBorn, expectSalary, availability }) => {
+const SelfIntroduction = ({
+    person: { nickName, firstName, lastName, dateOfBirth, expectedSalary, availability }
+}) => {
     return (
         <div className='text-center leading-loose'>
             <div>
@@ -9,26 +11,36 @@ const SelfIntroduction = ({ nickName, firstName, lastName, dateOfBorn, expectSal
                 </div>
             </div>
 
-            <div className="grid">
-                <div className='titleCenter text-decoration w-4/6 text-2xl pb-2 mb-4'>
+            <div className="px-[50px]">
+                <div className='font-bold text-decoration text-2xl pb-2 mb-4'>
                     {lastName}, {firstName}
                 </div>
             </div>
 
-            <div>
-                <div>Date Of Birth:</div>
-                <div>
-                    {dateOfBorn}
+            <div className="text-left px-[20px]">
+                <div className="flex justify-between">
+                    <span className="font-semibold">
+                        Date Of Birth:
+                    </span>
+
+                    {dateOfBirth}
                 </div>
-            </div>
 
-            <div>
-                <div>Expected Salary:</div>
-                <div>HKD {expectSalary}/ month</div>
-            </div>
+                <div className="flex justify-between">
+                    <span className="font-semibold">
+                        Expected Salary:
+                    </span>
 
-            <div>
-                <div>Availability: {availability}</div>
+                    HKD {expectedSalary.toLocaleString("en-US")}
+                </div>
+
+                <div className="flex justify-between">
+                    <span className="font-semibold">
+                        Availability:
+                    </span>
+
+                    {availability}
+                </div>
             </div>
         </div>
     )
