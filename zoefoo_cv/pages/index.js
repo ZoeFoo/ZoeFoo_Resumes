@@ -6,6 +6,7 @@ import HandsOnExperiences from '@/components/HandsOnExperiences';
 import ProjectExperiences from '@/components/ProjectExperiences';
 import Education from '@/components/Education';
 import WorkExperience from '@/components/WorkExperience';
+import Form from '@/components/Form';
 
 export default function Home() {
     const person = {
@@ -200,6 +201,14 @@ export default function Home() {
                                 }
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div className='page'>
+                    <div>
+                        <Form/>
                     </div>
                 </div>
             </div>
