@@ -6,7 +6,7 @@ import HandsOnExperiences from '@/components/HandsOnExperiences';
 import ProjectExperiences from '@/components/ProjectExperiences';
 import Education from '@/components/Education';
 import WorkExperience from '@/components/WorkExperience';
-import Form from '@/components/Form';
+import NavigationBar from '@/components/NavigationBar';
 
 export default function Home() {
     const person = {
@@ -108,7 +108,11 @@ export default function Home() {
     ];
     return (
         <div className='bg-gradient-to-t from-slate-400 to-white-300'>
-            <div className="flex justify-center p-5 print:p-0">
+            <div className='fixed top-0 right-0 left-0 bg-gray-700 print:hidden'>
+                <NavigationBar/>
+            </div>
+
+            <div className="flex justify-center mt-[90px] p-5 print:mt-0 p-0">
                 <div className='page flex flex-nowrap'>
                     <div className='flex flex-col justify-around w-2/5 bg-slate-100'>
                         <div>
@@ -201,14 +205,6 @@ export default function Home() {
                                 }
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div className='page'>
-                    <div>
-                        <Form/>
                     </div>
                 </div>
             </div>
