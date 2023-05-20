@@ -1,29 +1,21 @@
 const express = require('express');
-const path = require('path');
-const session = require('express-session');
-const bodyParser = require("body-parser");
+const cors = require('cors');
 const app = express();
-const port = 3000;
+const port = 3005;
+const connectDB = require("./db");
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cors());
+connectDB().then(() => {
+    app.use("/auth", require("./auth/route"));
 
-app.use(session({
-    secret: 'cv',
-    resave: true,
-    saveUninitialized: true,
-}))
+    app.post('/submit-data', (req, res) => {
+        res.send(req.body);
+    })
 
-//app.use('/static', express.static(path.join(__dirname, 'public')))
-
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve('public/index.html'));
+    app.listen(port, () => {
+        console.log(`App listening on port: http://locathost:${port}`)
+    });
 });
 
-app.post('/submit-data', (req, res) => {
-    const name = req.body.firstName + '' + req.body.lastName;
-    res.send(name + 'submit successfully!');
-})
 
-app.listen(port, () => {
-    console.log(`Example app listening on port: http://locathost:${port}`)
-});
