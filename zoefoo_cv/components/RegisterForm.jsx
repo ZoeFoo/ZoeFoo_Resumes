@@ -16,7 +16,7 @@ const RegisterForm = ({ setIsVisible }) => {
     };
 
     return (
-        <div className='text-white'>
+        <div className='text-white relative'>
             <div className='text-end my-5 mx-[50px]'>
                 <button onClick={() => { setIsVisible(false) }}>
                     <FontAwesomeIcon icon={faSquareXmark} className='text-[50px]' />
@@ -34,6 +34,7 @@ const RegisterForm = ({ setIsVisible }) => {
                             <Input
                                 register={register}
                                 labelName={"Email"}
+                                idName={"email"}
                                 errors={errors} />
                         </div>
 
@@ -41,6 +42,7 @@ const RegisterForm = ({ setIsVisible }) => {
                             <Input
                                 register={register}
                                 labelName={"Password"}
+                                idName={"password"}
                                 errors={errors} />
                         </div>
 
@@ -48,6 +50,7 @@ const RegisterForm = ({ setIsVisible }) => {
                             <Input
                                 register={register}
                                 labelName={"First Name"}
+                                idName={"firstName"}
                                 errors={errors} />
                         </div>
 
@@ -55,6 +58,7 @@ const RegisterForm = ({ setIsVisible }) => {
                             <Input
                                 register={register}
                                 labelName={"Last Name"}
+                                idName={"lastName"}
                                 errors={errors} />
                         </div>
 
@@ -67,15 +71,17 @@ const RegisterForm = ({ setIsVisible }) => {
 
             </div>
 
+            
+
         </div>
     );
 };
 
-const Input = ({ register, labelName, errors }) => {
+const Input = ({ register, labelName, idName, errors }) => {
     return (
         <div>
             <label className='text-[20px] font-bold tracking-[5px]'>{labelName}</label>
-            <input {...register(`${labelName}`, { required: true })}
+            <input {...register(`${idName}`, { required: true })}
                 className='text-black' />
             {errors[labelName] && <p>This field is required</p>}
         </div>
