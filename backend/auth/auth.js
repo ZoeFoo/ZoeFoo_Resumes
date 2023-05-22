@@ -2,6 +2,7 @@ const express = require('express');
 const User = require('../model/User');
 const app = express();
 const bcrypt = require("bcrypt");
+const { createJWT } = require('../utils/jwt');
 
 app.use(express.json());
 
@@ -19,15 +20,19 @@ exports.register = async (req, res) => {
                     lastName,
                 });
 
-                res.status(200).json({
-                    message: "User created successfully",
-                    user
-                });
+                return (
+                    res.json({
+                        message: "User created successfully",
+                        user
+                    })
+                );
             } catch (e) {
-                res.status(401).json({
-                    message: "User not created successfully",
-                    error: e.message,
-                });
+                return (
+                    res.status(401).json({
+                        message: "Account already exists",
+                        error: e.message,
+                    })
+                )
             }
         });
     });
@@ -44,6 +49,9 @@ exports.login = async (req, res) => {
 
     try {
         const user = await User.findOne({ email });
+        const userData = { ...user.toJSON() };
+        delete userData.password;
+
         if (!user) {
             return res.statue(401).json({
                 message: "Login not successful",
@@ -53,9 +61,9 @@ exports.login = async (req, res) => {
 
         const result = await bcrypt.compare(password, user.password);
         if (result == true) {
-            return res.status(200).json({
+            return res.json({
                 message: "Login successful",
-                user
+                jwt: createJWT(userData),
             })
         } else {
             return res.status(401).json({

@@ -1,18 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
+import Modal from '@/components/Modal';
 
 import api from '@/services';
 
 const RegisterForm = ({ setIsVisible }) => {
+    const [isSuccessful, setIsSuccessful] = useState(false);
+    const [isFailed, setFailed] = useState(false);
+
     const {
         register,
         handleSubmit,
         formState: { errors }
     } = useForm();
     const onSubmit = async (data) => {
-        await api.createAccount(data);
+        try {
+            const res = await api.createAccount(data);
+
+            if (res.status == 200) {
+                setIsSuccessful(true);
+                setTimeout(() => { setIsSuccessful(false) }, 2000);
+                const { email, password } = data;
+                await api.login({ email, password });
+            } else {
+                setFailed(true);
+                setTimeout(() => { setFailed(false) }, 2000);
+            }
+        } catch (error) {
+            console.error('onSubmit failed', error)
+        }
     };
 
     return (
@@ -68,11 +86,19 @@ const RegisterForm = ({ setIsVisible }) => {
                         </button>
                     </form>
                 </div>
-
             </div>
 
-            
+            {isSuccessful && < div >
+                <Modal
+                    successful={true}
+                    stateText={'Successful'} />
+            </div>}
 
+            {isFailed && < div >
+                <Modal
+                    successful={false}
+                    stateText={'Account Already Exists'} />
+            </div>}
         </div>
     );
 };
@@ -83,10 +109,9 @@ const Input = ({ register, labelName, idName, errors }) => {
             <label className='text-[20px] font-bold tracking-[5px]'>{labelName}</label>
             <input {...register(`${idName}`, { required: true })}
                 className='text-black' />
-            {errors[labelName] && <p>This field is required</p>}
+            {errors[idName] && <p>This field is required</p>}
         </div>
     )
 };
-
 
 export default RegisterForm;

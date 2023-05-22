@@ -107,9 +107,9 @@ export default function Home() {
         }
     ];
     return (
-        <div className='bg-gradient-to-t from-slate-400 to-white-300'>
+        <div className='relative bg-gradient-to-t from-slate-400 to-white-300'>
             <div className='fixed top-0 right-0 left-0 bg-gray-700 print:hidden'>
-                <NavigationBar/>
+                <NavigationBar />
             </div>
 
             <div className="flex justify-center mt-[90px] p-5 print:mt-0 p-0">

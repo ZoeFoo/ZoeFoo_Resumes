@@ -5,4 +5,7 @@
     <BuildCommand>
     </BuildCommand>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="apis\" />
+  </ItemGroup>
 </Project>
