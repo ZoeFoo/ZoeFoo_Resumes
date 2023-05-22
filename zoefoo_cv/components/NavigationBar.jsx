@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RegisterForm from './RegisterForm';
+import RegisterForm from '@/components/RegisterForm';
 
 const NavigationBar = () => {
     const [isVisible, setIsVisible] = useState(false);
