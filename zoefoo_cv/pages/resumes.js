@@ -1,36 +1,28 @@
 import SelfIntroduction from '@/components/SelfIntroduction';
-import PersonalQuailities from '@/components/PersonalQualities';
 import Language from '@/components/Language';
-import Contact from '@/components/Contact';
 import HandsOnExperiences from '@/components/HandsOnExperiences';
 import ProjectExperiences from '@/components/ProjectExperiences';
 import Education from '@/components/Education';
 import WorkExperience from '@/components/WorkExperience';
 import NavigationBar from '@/components/NavigationBar';
+import Info from '@/components/Info';
 
 export default function Resumes() {
     const person = {
         nickName: "Zoe",
         firstName: "Foo",
         lastName: "Chor Mei",
-        dateOfBirth: "1st April, 1996",
-        expectedSalary: 25000,
-        availability: "immediate",
+        phone: "+852 5402 6240",
+        email: "foochormei335205@gmail.com",
     };
-    const qualities = [
-        "Interpersonal skills, Flexibility,",
-        "Creativity, Willingness to learn,",
-        "Team player, Handling pressure,",
-        "Problem solving, Attention to detail",
-    ];
     const languages = {
         cantonese: "Native",
         english: "Conversational",
         mandarin: "Fluent",
     };
-    const contact = {
-        phone: "+852 5402 6240",
-        email: "foochormei335205@gmail.com",
+    const info = {
+        expectedSalary: 25000,
+        availability: "immediate",
     };
     const skills = [
         "HTML5, React JS, React Native, Bootstrap",
@@ -45,32 +37,29 @@ export default function Resumes() {
     const projects = [
         {
             name: "Mobile App - Real-time Arrival Bus App",
-            purpose: "A mobile app that shows real-time bus arrival information.",
+            /* purpose: "A mobile app that shows real-time bus arrival information.",*/
             skills: [
-                "React Native, Redux, Node.js,",
-                " i18n-js,react-native-maps,",
-                "Metro, Git, GitHub, yarn, Visual Studio",
+                "React Native, Redux, Node.js, react-native-maps,",
+                "i18n-js, Metro, Git, GitHub, yarn, Visual Studio",
             ],
             link: "https://github.com/ZoeFoo/MoblieApp-Real-time-Arrival-Bus-App",
         }, {
             name: "Mobile App - TripIdea",
-            purpose: "A platform for user to plan travel route for \n themselves flexibly.",
+            //purpose: "A platform for user to plan travel route for \n themselves flexibly.",
             skills: [
-                "React Native, Redux, NestJS, Prisma,",
-                "SQL, PostgreSQL, Node.js, TypeScript,",
-                "Metro, Git, GitHub, npm, yarn,",
-                "Visual Studio Code, Visual Studio",
+                "React Native, Redux, NestJS, Prisma, Node.js, SQL,",
+                "PostgreSQL, TypeScript, Metro, Git, GitHub, npm,",
+                "yarn, Visual Studio Code, Visual Studio",
             ],
             link: "",
         }, {
             name: "Game of Website - SignUniverse",
-            purpose: "A game to make children have fun while \n learning and practicing sign language.",
+            //purpose: "A game to make children have fun while \n learning and practicing sign language.",
             skills: [
-                "HTML5, Bootstrap, p5.js, p5play, Css3, SQL,",
-                "PostgreSQL, JavaScript, AJAX, Express,",
-                "Node.js, TypeScript, Git, GitHub, npm,",
-                "yarn, MediaPipe, Visual Studio Code,",
-                "Visual Studio, Adobe Photoshop",
+                "PostgreSQL, JavaScript, p5.js, p5play, PostgreSQL,",
+                "Node.js, TypeScript, AJAX, Express, HTML5, Css3,",
+                "Bootstrap, Git, GitHub, npm, yarn, MediaPipe,",
+                "Visual Studio Code, Adobe Photoshop",
             ],
             link: "",
         },
@@ -99,11 +88,19 @@ export default function Resumes() {
             dateStart: "11/2019",
             dateEnd: "12 / 2022",
             position: "Receptionist  (Full-time)",
+            Responsibilities: [
+                "Deliver general administrative and clerical support",
+                "Respond to telephone enquiries and greet guests / visitors"
+            ],
         }, {
             name: "MCL Cinemas",
             dateStart: "2016",
             dateEnd: "6/2019",
             position: "Cinema Staff  (Part-time)",
+            Responsibilities: [
+                "Maintain order the cinemas",
+                "Provide support for the Cinemas Manager"
+            ],
         }
     ];
     return (
@@ -112,73 +109,20 @@ export default function Resumes() {
                 <NavigationBar />
             </div>
 
-            <div className="flex justify-center mt-[90px] p-5 print:mt-0 p-0">
+            <div className="flex justify-center mt-[90px] p-5 print:mt-0 print:p-0">
                 <div className='page flex flex-nowrap'>
                     <div className='flex flex-col justify-around w-2/5 bg-slate-100'>
                         <div>
                             <SelfIntroduction person={person} />
                         </div>
 
-                        <div>
-                            <PersonalQuailities list={qualities} />
-                        </div>
-
-                        <div>
-                            <Language languages={languages} />
-                        </div>
-
-                        <div>
-                            <Contact contact={contact} />
-                        </div>
-                    </div>
-
-                    <div className='flex flex-col justify-between w-3/5 my-[50px] px-[25px] bg-white'>
-                        <div>
-                            <HandsOnExperiences list={skills} />
-                        </div>
-
-                        <div>
-                            <div className='inline-block'>
-                                <div className='text-decoration text-xl font-bold tracking-[2px] px-5 pb-2' >
-                                    Project Experiences
+                        <div className='text-center leading-loose'>
+                            <div className='px-[50px]'>
+                                <div className='font-bold text-decoration text-xl tracking-[2px] pb-2'>
+                                    Education
                                 </div>
                             </div>
 
-                            <div>
-                                {
-                                    projects.slice(0, 2).map((project, i) => (
-                                        <ProjectExperiences key={i} project={project} />
-                                    ))
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="flex justify-center p-5 print:p-0">
-                <div className='page' >
-                    <div className='p-20'>
-                        <div className='pb-10'>
-                            <div className='inline-block'>
-                                <div className='text-decoration text-xl font-bold tracking-[2px] px-5 pb-2' >
-                                    Project Experiences
-                                </div>
-                            </div>
-
-                            <div>
-                                {
-                                    projects.slice(2, projects.length).map((project, i) => (
-                                        <ProjectExperiences key={i} project={project} />
-                                    ))
-                                }
-                            </div>
-                        </div>
-
-                        <div>
-                            <div className='text-decoration text-xl font-bold inline-block tracking-[2px] px-8 pb-2 mb-4'>
-                                Education
-                            </div>
                             <div>
                                 {
                                     educations.map((education, i) => (
@@ -189,9 +133,39 @@ export default function Resumes() {
                             </div>
                         </div>
 
+                        <div className='mt-[-30px]'>
+                            <Language languages={languages} />
+                        </div>
+
                         <div>
-                            <div>
-                                <div className='text-decoration text-xl font-bold inline-block tracking-[2px] px-8 py-2 my-4'>
+                            <Info info={info} />
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col justify-evenly w-3/5 my-[10px] px-[25px] bg-white'>
+                        <div className='mb-[10px]'>
+                            <HandsOnExperiences list={skills} />
+                        </div>
+
+                        <div>
+                            <div className='inline-block'>
+                                <div className='text-decoration text-xl font-bold tracking-[2px] px-5 ' >
+                                    Project Experiences
+                                </div>
+                            </div>
+
+                            <div className='mt-[-15px]'>
+                                {
+                                    projects.map((project, i) => (
+                                        <ProjectExperiences key={i} project={project} />
+                                    ))
+                                }
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className='mt-[-20px]'>
+                                <div className='text-decoration text-xl font-bold inline-block tracking-[2px] px-8  my-2'>
                                     Work Experiences
                                 </div>
                             </div>

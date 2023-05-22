@@ -2,9 +2,9 @@ import React from 'react';
 
 const HandsOnExperiences = ({ list }) => {
     return (
-        <div className='leading-loose'>
+        <div className='leading-snug'>
             <div className='inline-block tracking-[2px]'>
-                <div className='text-decoration text-xl font-bold px-5 pb-2 mb-4'>
+                <div className='text-decoration text-xl font-bold mb-2 px-5'>
                     Hands-on Experiences
                 </div>
             </div>
