@@ -6,6 +6,9 @@
     </BuildCommand>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="apis\" />
+    <TypeScriptConfiguration Remove="apis\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="apis\**" />
   </ItemGroup>
 </Project>

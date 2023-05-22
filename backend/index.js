@@ -7,11 +7,7 @@ const connectDB = require("./db");
 app.use(express.json());
 app.use(cors());
 connectDB().then(() => {
-    app.use("/auth", require("./auth/route"));
-
-    app.post('/submit-data', (req, res) => {
-        res.send(req.body);
-    })
+    app.use("/auth", require("./auth/authRoute"));
 
     app.listen(port, () => {
         console.log(`App listening on port: http://locathost:${port}`)

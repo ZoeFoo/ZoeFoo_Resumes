@@ -10,8 +10,8 @@ exports.register = async (req, res) => {
     const { email, password, firstName, lastName } = req.body;
     const saltRounds = 10;
 
-    bcrypt.genSalt(saltRounds, function (err, salt) {
-        bcrypt.hash(password, salt, async function (err, hash) {
+    bcrypt.genSalt(saltRounds, (err, salt) => {
+        bcrypt.hash(password, salt, async (err, hash) => {
             try {
                 const user = await User.create({
                     email,
@@ -29,7 +29,7 @@ exports.register = async (req, res) => {
             } catch (e) {
                 return (
                     res.status(401).json({
-                        message: "Account already exists",
+                        message: "User can not created",
                         error: e.message,
                     })
                 )
