@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
-import Modal from '@/components/Modal';
 
 import api from '@/services';
 
-const RegisterForm = ({ setIsVisible }) => {
+const LoginForm = () => {
     const [isSuccessful, setIsSuccessful] = useState(false);
     const [isFailed, setFailed] = useState(false);
 
@@ -33,18 +30,11 @@ const RegisterForm = ({ setIsVisible }) => {
             console.error('onSubmit failed', error)
         }
     };
-
     return (
         <div className='text-white relative'>
-            {/*<div className='text-end my-5 mx-[50px]'>*/}
-            {/*    <button onClick={() => { setIsVisible(false) }}>*/}
-            {/*        <FontAwesomeIcon icon={faSquareXmark} className='text-[50px]' />*/}
-            {/*    </button>*/}
-            {/*</div>*/}
-
-            <div className='flex flex-col item-center leading-loose'>
+            <div className='flex flex-col leading-loose'>
                 <div className='text-center text-[40px] font-bold m-5'>
-                    Register
+                    Login
                 </div>
 
                 <div>
@@ -65,33 +55,17 @@ const RegisterForm = ({ setIsVisible }) => {
                                 errors={errors} />
                         </div>
 
-                        <div>
-                            <Input
-                                register={register}
-                                labelName={"First Name"}
-                                idName={"firstName"}
-                                errors={errors} />
-                        </div>
-
-                        <div>
-                            <Input
-                                register={register}
-                                labelName={"Last Name"}
-                                idName={"lastName"}
-                                errors={errors} />
-                        </div>
-
                         <div className='flex flex-nowrap text-[20px] font-semibold'>
-                            <div>Already have an account?</div>
+                            <div>Dont't have an account?</div>
 
                             <div className='mx-3 text-[green] hover:underline'>
-                                <Link href='/login'>Log in</Link>
+                                <Link href='/'>Register</Link>
                             </div>
                         </div>
 
                         <button onClick={handleSubmit}
                             className='text-[20px] font-bold border-2 rounded-lg tracking-[10px] bg-slate-700 w-[100%] p-5 my-3 hover:bg-slate-500'>
-                            Submit
+                            Login
                         </button>
                     </form>
                 </div>
@@ -123,4 +97,4 @@ const Input = ({ register, labelName, idName, errors }) => {
     )
 };
 
-export default RegisterForm;
+export default LoginForm;
