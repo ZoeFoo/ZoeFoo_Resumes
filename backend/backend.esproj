@@ -11,4 +11,7 @@
   <ItemGroup>
     <None Remove="apis\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resumes\" />
+  </ItemGroup>
 </Project>
