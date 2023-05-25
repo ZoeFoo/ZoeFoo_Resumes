@@ -12,8 +12,9 @@ const createAccount = async (form) => {
 
 const login = async (userData) => {
     try {
-        axios.post('/auth/login', userData);
-        console.log('login successful', { userData });
+        const res = axios.post('/auth/login', userData);
+        console.log('login successful');
+        return res;
     } catch (error) {
         conosle.error('login failed', error);
     }
