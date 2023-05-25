@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 connectDB().then(() => {
     app.use("/auth", require("./auth/authRoute"));
-    app.use("/resumes", require("./resumes/resuesRoute");
+    app.use("/resumes", require("./resumes/resumesRoute"));
 
     app.listen(port, () => {
         console.log(`App listening on port: http://locathost:${port}`)

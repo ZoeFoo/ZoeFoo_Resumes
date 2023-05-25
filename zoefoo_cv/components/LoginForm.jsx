@@ -16,7 +16,7 @@ const LoginForm = () => {
     } = useForm();
     const onSubmit = async (data) => {
         try {
-            const res = await apis.login(data);
+            const res = await apis.auth.login(data);
 
             if (res.status == 200) {
                 setIsSuccessful(true);

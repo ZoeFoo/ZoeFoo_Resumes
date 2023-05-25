@@ -18,13 +18,13 @@ const RegisterForm = ({ setIsVisible }) => {
     } = useForm();
     const onSubmit = async (data) => {
         try {
-            const res = await apis.createAccount(data);
+            const res = await apis.auth.createAccount(data);
 
             if (res.status == 200) {
                 setIsSuccessful(true);
                 setTimeout(() => { setIsSuccessful(false) }, 2000);
                 const { email, password } = data;
-                await apis.login({ email, password });
+                await apis.auth.login({ email, password });
             } else {
                 setFailed(true);
                 setTimeout(() => { setFailed(false) }, 2000);
