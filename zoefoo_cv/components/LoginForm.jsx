@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Link from 'next/link';
 import Modal from '@/components/Modal';
 
-import api from '@/services';
+import apis from '@/services/apis';
 
 const LoginForm = () => {
     const [isSuccessful, setIsSuccessful] = useState(false);
@@ -16,7 +16,7 @@ const LoginForm = () => {
     } = useForm();
     const onSubmit = async (data) => {
         try {
-            const res = await api.login(data);
+            const res = await apis.login(data);
 
             if (res.status == 200) {
                 setIsSuccessful(true);
