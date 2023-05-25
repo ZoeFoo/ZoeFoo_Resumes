@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import Link from 'next/link';
+import Modal from '@/components/Modal';
 
 import api from '@/services';
 
@@ -15,13 +16,12 @@ const LoginForm = () => {
     } = useForm();
     const onSubmit = async (data) => {
         try {
-            const res = await api.createAccount(data);
+            const res = await api.login(data);
 
             if (res.status == 200) {
                 setIsSuccessful(true);
                 setTimeout(() => { setIsSuccessful(false) }, 2000);
-                const { email, password } = data;
-                await api.login({ email, password });
+                console.log(res.data.jwt);
             } else {
                 setFailed(true);
                 setTimeout(() => { setFailed(false) }, 2000);
@@ -74,13 +74,13 @@ const LoginForm = () => {
             {isSuccessful && < div >
                 <Modal
                     successful={true}
-                    stateText={'Successful'} />
+                    stateText={'Login Successful'} />
             </div>}
 
             {isFailed && < div >
                 <Modal
                     successful={false}
-                    stateText={'Account Already Exists'} />
+                    stateText={`This Account doesn't Exist`} />
             </div>}
         </div>
     );
