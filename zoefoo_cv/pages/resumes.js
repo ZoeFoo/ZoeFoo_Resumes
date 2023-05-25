@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import SelfIntroduction from '@/components/SelfIntroduction';
 import PersonalQuailities from '@/components/PersonalQualities';
 import Language from '@/components/Language';
@@ -7,6 +8,8 @@ import ProjectExperiences from '@/components/ProjectExperiences';
 import Education from '@/components/Education';
 import WorkExperience from '@/components/WorkExperience';
 import NavigationBar from '@/components/NavigationBar';
+
+import apis from '@/services/apis';
 
 export default function Resumes() {
     const person = {
@@ -106,6 +109,19 @@ export default function Resumes() {
             position: "Cinema Staff  (Part-time)",
         }
     ];
+
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        const fetchMyData = async () => {
+            const res = await apis.resumes.resumes();
+            console.log({ res });
+            //const json = await res.json();
+            //setData(json);
+        };
+        fetchMyData();
+    }, []);
+
     return (
         <div className='relative bg-gradient-to-t from-slate-400 to-white-300'>
             <div className='fixed top-0 right-0 left-0 bg-gray-700 print:hidden'>

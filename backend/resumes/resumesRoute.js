@@ -4,4 +4,4 @@ const { resumes } = require("./resumes");
 
 router.route("/").get(resumes);
 
-module.expores = router;
+module.exports = router;

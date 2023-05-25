@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 import Modal from '@/components/Modal';
 
-import api from '@/services';
+import apis from '@/services/apis';
 
 const RegisterForm = ({ setIsVisible }) => {
     const [isSuccessful, setIsSuccessful] = useState(false);
@@ -18,13 +18,13 @@ const RegisterForm = ({ setIsVisible }) => {
     } = useForm();
     const onSubmit = async (data) => {
         try {
-            const res = await api.createAccount(data);
+            const res = await apis.auth.createAccount(data);
 
             if (res.status == 200) {
                 setIsSuccessful(true);
                 setTimeout(() => { setIsSuccessful(false) }, 2000);
                 const { email, password } = data;
-                await api.login({ email, password });
+                await apis.auth.login({ email, password });
             } else {
                 setFailed(true);
                 setTimeout(() => { setFailed(false) }, 2000);
