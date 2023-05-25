@@ -11,11 +11,7 @@ const PersonalQualities = ({ list }) => {
 
             <div>
                 <div>
-                    {
-                        list.map((character, i) => (
-                            <div key={i}>{character}</div>)
-                        )
-                    }
+                    {list}
                 </div>
             </div>
         </div>

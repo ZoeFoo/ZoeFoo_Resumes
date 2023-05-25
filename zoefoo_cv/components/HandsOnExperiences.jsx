@@ -11,11 +11,7 @@ const HandsOnExperiences = ({ list }) => {
 
             <div className='ms-5 tracking-[1px]'>
                 <div>
-                    {
-                        list.map((skill, i) => (
-                            <div key={i}>{skill}</div>)
-                        )
-                    }
+                    {list}
                 </div>
             </div>
         </div>
