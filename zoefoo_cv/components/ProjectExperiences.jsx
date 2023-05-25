@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 const ProjectExperiences = ({ project: { name, purpose, skills, link } }) => {
-    const purposeResult = purpose.split('\n').map((sentence, i) => <div key={i}>{sentence}</div>);
-
     return (
         <div className='leading-loose pt-4'>
             <div>
@@ -27,7 +25,7 @@ const ProjectExperiences = ({ project: { name, purpose, skills, link } }) => {
                 </div>
 
                 <div className='ps-6'>
-                    {purposeResult}
+                    {purpose}
                 </div>
             </div>
 
@@ -46,11 +44,7 @@ const ProjectExperiences = ({ project: { name, purpose, skills, link } }) => {
 
                 <div>
                     <div className='ps-6'>
-                        {
-                            skills.map((skill, i) => (
-                                <div key={i}>{skill}</div>
-                            ))
-                        }
+                        {skills}
                     </div>
                 </div>
             </div>
