@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faCircle, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
+import ProjectExperiences from './ProjectExperiences';
 import Modal from '@/components/Modal';
 
 import apis from '@/services/apis';
@@ -10,6 +11,7 @@ import apis from '@/services/apis';
 const ResumesForm = () => {
     const [isSuccessful, setIsSuccessful] = useState(false);
     const [isFailed, setFailed] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     const {
         register,
@@ -19,6 +21,7 @@ const ResumesForm = () => {
     const onSubmit = async (data) => {
         console.log({ data })
     }
+
     return (
         <div className="flex justify-center mt-[90px] p-5 print:mt-0 p-0 text-black">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -199,7 +202,7 @@ const ResumesForm = () => {
                         </div>
                     </div>
 
-                    <div className='flex flex-col justify-between w-3/5 my-[20px] px-[25px] bg-white '>
+                    <div className='flex flex-col justify-between w-3/5 my-[10px] px-[25px] bg-white '>
                         <div>
                             <div className='text-decoration inline-block text-xl tracking-[2px] font-bold px-5'>
                                 Hands-on Experiences
@@ -223,89 +226,24 @@ const ResumesForm = () => {
 
                             <div>
                                 <div>
-                                    <div className='text-lg font-semibold ps-6'>
-                                        <Input
-                                            register={register}
-                                            labelName={"Project Name"}
-                                            idName={"projectName"}
-                                            errors={errors} />
-                                    </div>
-
-                                    <div className='flex flex-nowrap'>
-                                        <div>
-                                            <FontAwesomeIcon
-                                                icon={faCircle}
-                                                className='w-[5px]' />
-                                        </div>
-
-                                        <div className='ps-5 w-[100%]'>
-                                            <div>
-                                                Purpose:
-                                            </div>
-
-                                            <div>
-                                                <Input
-                                                    register={register}
-                                                    labelName={"Project Purpose"}
-                                                    idName={"projectPurpose"}
-                                                    errors={errors} />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className='flex flex-nowrap'>
-                                        <div>
-                                            <FontAwesomeIcon
-                                                icon={faCircle}
-                                                className='w-[5px]' />
-                                        </div>
-
-                                        <div className='ps-5 w-[100%]'>
-                                            <div>
-                                                Tech Skills:
-                                            </div>
-
-                                            <div>
-                                                <TextArea
-                                                    register={register}
-                                                    labelName={"Tech Skills"}
-                                                    idName={"techSkills"}
-                                                    errors={errors}
-                                                    rows={4}
-                                                    cols={41} />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className='flex flex-nowrap'>
-                                        <div>
-                                            <FontAwesomeIcon
-                                                icon={faCircle}
-                                                className='w-[5px]' />
-                                        </div>
-
-                                        <div className='ps-5 w-[100%]'>
-                                            <div>
-                                                GitHub:
-                                            </div>
-
-                                            <div>
-                                                <Input
-                                                    register={register}
-                                                    labelName={"Github link"}
-                                                    idName={"link"}
-                                                    errors={errors} />
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <ProjectExperiences
+                                        register={register}
+                                        errors={errors} />
                                 </div>
 
+                                {isVisible && (<div>
+                                    <ProjectExperiences
+                                        register={register}
+                                        errors={errors} />
+                                </div>
+                                )}
+
                                 <div className='text-center'>
-                                    <button >{/*onClick={() => { }}*/}
+                                    <div onClick={() => { setIsVisible(true) }}>
                                         <FontAwesomeIcon
                                             icon={faSquarePlus}
                                             className='text-[40px] text-[#334155]' />
-                                    </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +251,7 @@ const ResumesForm = () => {
                 </div>
 
                 <div>
-                    <button onClick={handleSubmit}
+                    <button key={1} onClick={handleSubmit}
                         className='text-[20px] font-bold border-2 rounded-lg tracking-[10px] bg-slate-700 w-[100%] p-5 my-3 hover:bg-slate-500'>
                         Submit
                     </button>
@@ -338,7 +276,7 @@ const ResumesForm = () => {
 const Input = ({ register, labelName, idName, errors }) => {
     return (
         <div>
-            <input {...register(`${idName}`, { required: true })}
+            <input {...register(`${idName}`, { required: false })}
                 placeholder={labelName} />
             {errors[idName] && <p>This field is required</p>}
         </div>
@@ -348,7 +286,7 @@ const Input = ({ register, labelName, idName, errors }) => {
 const TextArea = ({ register, labelName, idName, errors, rows, cols }) => {
     return (
         <div>
-            <textarea {...register(`${idName}`, { required: true })}
+            <textarea {...register(`${idName}`, { required: false })}
                 placeholder={labelName}
                 rows={rows}
                 cols={cols}
