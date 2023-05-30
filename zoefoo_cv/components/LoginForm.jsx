@@ -38,7 +38,9 @@ const LoginForm = () => {
                 </div>
 
                 <div>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form
+                        className='max-w-[500px] mx-auto'
+                        onSubmit={handleSubmit(onSubmit)}>
                         <div>
                             <Input
                                 register={register}

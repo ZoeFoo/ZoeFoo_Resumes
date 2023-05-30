@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 import Modal from '@/components/Modal';
 
 import apis from '@/services/apis';
 
-const RegisterForm = ({ setIsVisible }) => {
+const RegisterForm = () => {
     const [isSuccessful, setIsSuccessful] = useState(false);
     const [isFailed, setFailed] = useState(false);
 
@@ -36,19 +34,15 @@ const RegisterForm = ({ setIsVisible }) => {
 
     return (
         <div className='text-white relative'>
-            {/*<div className='text-end my-5 mx-[50px]'>*/}
-            {/*    <button onClick={() => { setIsVisible(false) }}>*/}
-            {/*        <FontAwesomeIcon icon={faSquareXmark} className='text-[50px]' />*/}
-            {/*    </button>*/}
-            {/*</div>*/}
-
             <div className='flex flex-col item-center leading-loose'>
                 <div className='text-center text-[40px] font-bold m-5'>
                     Register
                 </div>
 
                 <div>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form
+                        className='max-w-[500px] mx-auto'
+                        onSubmit={handleSubmit(onSubmit)}>
                         <div>
                             <Input
                                 register={register}
