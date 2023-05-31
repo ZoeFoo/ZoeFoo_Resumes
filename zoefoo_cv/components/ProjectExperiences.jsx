@@ -125,7 +125,7 @@ const ProjectExperiences = ({ project, register, errors }) => {
                                 labelName={"Tech Skills"}
                                 idName={"techSkills"}
                                 errors={errors}
-                                rows={4}
+                                rows={8}
                                 cols={41} />
                         </div>
                     </div>
