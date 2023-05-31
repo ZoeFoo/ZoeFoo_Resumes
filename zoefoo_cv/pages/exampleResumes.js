@@ -1,5 +1,5 @@
 import SelfIntroduction from '@/components/SelfIntroduction';
-import PersonalQuailities from '@/components/PersonalQualities';
+import PersonalQualities from '@/components/PersonalQualities';
 import Language from '@/components/Language';
 import Contact from '@/components/Contact';
 import HandsOnExperiences from '@/components/HandsOnExperiences';
@@ -121,7 +121,7 @@ export default function Resumes() {
                         </div>
 
                         <div>
-                            <PersonalQuailities list={qualities} />
+                            <PersonalQualities list={qualities} />
                         </div>
 
                         <div>

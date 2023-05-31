@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faCircle, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import SelfIntroduction from '@/components/SelfIntroduction';
+import PersonalQualities from '@/components/PersonalQualities';
 import ProjectExperiences from '@/components/ProjectExperiences';
 import Modal from '@/components/Modal';
 
@@ -42,21 +43,9 @@ const ResumesForm = () => {
                         </div>
 
                         <div>
-                            <div className='px-[10px] tracking-[2px]'>
-                                <div className='font-bold text-decoration text-xl'>
-                                    PERSONAL QUALITIES
-                                </div>
-                            </div>
-
-                            <div>
-                                <TextArea
-                                    register={register}
-                                    labelName={"Personal Qualities"}
-                                    idName={"qualities"}
-                                    errors={errors}
-                                    rows={"5"}
-                                    cols={"29"} />
-                            </div>
+                            <PersonalQualities
+                                register={register}
+                                errors={errors} />
                         </div>
 
                         <div>
