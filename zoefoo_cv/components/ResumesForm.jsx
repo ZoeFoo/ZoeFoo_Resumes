@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope, faCircle, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import SelfIntroduction from '@/components/SelfIntroduction';
 import PersonalQualities from '@/components/PersonalQualities';
+import Language from '@/components/Language';
 import ProjectExperiences from '@/components/ProjectExperiences';
 import Modal from '@/components/Modal';
 
@@ -49,55 +50,9 @@ const ResumesForm = () => {
                         </div>
 
                         <div>
-                            <div className='px-[50px]'>
-                                <div className='font-bold text-decoration text-xl tracking-[2px]'>
-                                    LANGUAGE
-                                </div>
-                            </div>
-
-                            <div className="text-left">
-                                <div className='flex flex-nowrap'>
-                                    <div className='flex flex-col justify-center w-[50%] ps-[5%]'>
-                                        Cantonese:
-                                    </div>
-
-                                    <div>
-                                        <Input
-                                            register={register}
-                                            labelName={"Cantonese"}
-                                            idName={"cantonese"}
-                                            errors={errors} />
-                                    </div>
-                                </div>
-
-                                <div className='flex flex-nowrap'>
-                                    <div className='flex flex-col justify-center w-[50%] ps-[5%]'>
-                                        English:
-                                    </div>
-
-                                    <div>
-                                        <Input
-                                            register={register}
-                                            labelName={"English"}
-                                            idName={"english"}
-                                            errors={errors} />
-                                    </div>
-                                </div>
-
-                                <div className='flex flex-nowrap'>
-                                    <div className='flex flex-col justify-center w-[50%] ps-[5%]'>
-                                        Mandarin:
-                                    </div>
-
-                                    <div>
-                                        <Input
-                                            register={register}
-                                            labelName={"Mandarin"}
-                                            idName={"mandarin"}
-                                            errors={errors} />
-                                    </div>
-                                </div>
-                            </div>
+                            <Language
+                                register={register}
+                                errors={errors} />
                         </div>
 
                         <div>
