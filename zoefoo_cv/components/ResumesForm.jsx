@@ -5,6 +5,7 @@ import { faPhone, faEnvelope, faSquarePlus } from '@fortawesome/free-solid-svg-i
 import SelfIntroduction from '@/components/SelfIntroduction';
 import PersonalQualities from '@/components/PersonalQualities';
 import Language from '@/components/Language';
+import Contact from '@/components/Contact';
 import ProjectExperiences from '@/components/ProjectExperiences';
 import Modal from '@/components/Modal';
 
@@ -56,37 +57,9 @@ const ResumesForm = () => {
                         </div>
 
                         <div>
-                            <div className='px-[50px]'>
-                                <div className='font-bold text-decoration text-xl tracking-[2px]'>
-                                    CONTACT
-                                </div>
-                            </div>
-
-                            <div>
-                                <div className="flex items-center justify-center">
-                                    <FontAwesomeIcon icon={faPhone} className='my-2 mx-2' />
-
-                                    <div>
-                                        <Input
-                                            register={register}
-                                            labelName={"Phone"}
-                                            idName={"phone"}
-                                            errors={errors} />
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center justify-center">
-                                    <FontAwesomeIcon icon={faEnvelope} className='my-2 mx-2' />
-
-                                    <div>
-                                        <Input
-                                            register={register}
-                                            labelName={"Email"}
-                                            idName={"email"}
-                                            errors={errors} />
-                                    </div>
-                                </div>
-                            </div>
+                            <Contact
+                                register={register}
+                                errors={errors} />
                         </div>
                     </div>
 
