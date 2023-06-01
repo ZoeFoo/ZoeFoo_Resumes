@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
-import SelfIntroduction from '@/components/SelfIntroduction';
+import SelfIntroductionInput from '@/components/resumesForm/SelfIntroductionInput';
 import PersonalQualities from '@/components/PersonalQualities';
 import Language from '@/components/Language';
 import Contact from '@/components/Contact';
@@ -11,11 +11,56 @@ import Modal from '@/components/Modal';
 
 import apis from '@/services/apis';
 
+const LatestProjectExperienceForm = ({ setProject, setProjectExperiencesForm }) => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm();
+
+    const projectData = async (project) => {
+        setProject(project)
+        setProjectExperiencesForm(false);
+    }
+
+    return (
+        <div className='absolute top-0 left-0 w-full h-full bg-[black] bg-opacity-[50%] flex items-center'>
+            <div className='w-[21cm] bg-slate-100 rounded-[20px] mx-auto py-10 px-10'>
+                <form onSubmit={handleSubmit(projectData)}>
+                    <div>
+                        <ProjectExperiences
+                            register={register}
+                            errors={errors} />
+                    </div>
+
+                    <div className="flex flex-nowrap text-center mt-3">
+                        <div className="w-[100%] ">
+                            <button type="submit"
+                                className="text-[white] border-1 border-[#e5e7eb] rounded-md bg-[#334155] py-3 w-[80%]">
+                                Save
+                            </button>
+                        </div>
+
+                        <div className="w-[100%]">
+                            <button type="button"
+                                onClick={() => { setProjectExperiencesForm(false) }}
+                                className="text-[white] border-1 border-[#e5e7eb] rounded-md bg-[#334155] py-3 w-[80%]">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
+};
 
 const ResumesForm = () => {
+    const [project, setProject] = useState(null);
     const [isSuccessful, setIsSuccessful] = useState(false);
     const [isFailed, setFailed] = useState(false);
     const [isSecondPage, setIsSecondPage] = useState(false);
+    const [projectExperiencesForm, setProjectExperiencesForm] = useState(false);
     const [isClikced, setIsClikced] = useState(false);
     const [isAddProjectExperiences, setIsAddProjectExperiences] = useState(false);
 
@@ -24,9 +69,10 @@ const ResumesForm = () => {
         handleSubmit,
         formState: { errors }
     } = useForm();
+
     const onSubmit = async (data) => {
         console.log({ data })
-    }
+    };
 
     const secondPage = () => {
         setIsSecondPage(true);
@@ -34,12 +80,20 @@ const ResumesForm = () => {
     };
 
     return (
-        <div className="mt-[50px] text-black flex justify-center">
+        <div className="relative pt-[50px] text-black flex justify-center">
+            {
+                projectExperiencesForm && (
+                    <LatestProjectExperienceForm
+                        setProject={setProject}
+                        setProjectExperiencesForm={setProjectExperiencesForm} />
+                )
+            }
+
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='page my-[30px] flex flex-nowrap'>
                     <div className='flex flex-col justify-evenly w-2/5 bg-slate-100 px-[10px] text-center'>
                         <div>
-                            <SelfIntroduction
+                            <SelfIntroductionInput
                                 register={register}
                                 errors={errors} />
                         </div>
@@ -69,34 +123,33 @@ const ResumesForm = () => {
                                 Hands-on Experiences
                             </div>
 
-                            <div className='ps-6'>
+                            <div className=''>
                                 <TextArea
                                     register={register}
                                     labelName={"Hands-on Experiences"}
                                     idName={"handsOnExperiences"}
                                     errors={errors}
                                     rows={8}
-                                    cols={41} />
+                                    cols={2} />
                             </div>
                         </div>
 
                         <div>
                             <div className='text-decoration inline-block text-xl font-bold tracking-[2px] px-5' >
-                                Newest Project Experiences
+                                Latest Project Experiences
                             </div>
 
-                            <div>
-                                <div>
-                                    <ProjectExperiences
-                                        register={register}
-                                        errors={errors} />
-                                </div>
+                            {
+                                project &&
+                                <ProjectExperiences project={project} />
+                            }
 
+                            <div>
                                 {!isClikced &&
                                     (<div>
                                         <button type="button"
-                                            onClick={() => { secondPage() }}
-                                            className='text-[white] text-center border-1 border-[#e5e7eb] rounded-md bg-[#334155] ms-6 py-3 w-[94%]'>
+                                            onClick={() => { setProjectExperiencesForm(true) }}
+                                            className='text-[white] text-center border-1 border-[#e5e7eb] rounded-md bg-[#334155] my-3 py-3 w-[100%]'>
                                             <div>
                                                 <FontAwesomeIcon
                                                     icon={faSquarePlus}
@@ -114,7 +167,8 @@ const ResumesForm = () => {
                     </div>
                 </div>
 
-                {isSecondPage &&
+                {
+                    isSecondPage &&
                     (<div className='page  my-[30px]' >
                         <div className='px-[8%] py-[5%]'>
                             <div className=''>
@@ -131,7 +185,9 @@ const ResumesForm = () => {
                                 </div>
 
                                 {isAddProjectExperiences &&
-                                    (<NewProjectExperiences register={register} errors={errors} />)
+                                    (<NewProjectExperiences
+                                        register={register}
+                                        errors={errors} />)
                                 }
 
                                 {isClikced &&
@@ -185,15 +241,16 @@ const ResumesForm = () => {
                             </div>
                         </div>
                     </div>
-                    )}
+                    )
+                }
 
                 <div>
-                    <button type="submit" onClick={handleSubmit}
+                    <button type="submit"
                         className='text-[20px] font-bold border-2 rounded-lg tracking-[10px] bg-slate-700 w-[100%] p-5 my-3 hover:bg-slate-500'>
                         Submit
                     </button>
                 </div>
-            </form>
+            </form >
 
             {isSuccessful && < div >
                 <Modal
@@ -201,12 +258,14 @@ const ResumesForm = () => {
                     stateText={'Successful'} />
             </div>}
 
-            {isFailed && < div >
-                <Modal
-                    successful={false}
-                    stateText={'Account Already Exists'} />
-            </div>}
-        </div>
+            {
+                isFailed && < div >
+                    <Modal
+                        successful={false}
+                        stateText={'Account Already Exists'} />
+                </div>
+            }
+        </div >
     )
 };
 
@@ -219,6 +278,15 @@ const NewProjectExperiences = ({ register, errors }) => {
         </div>
     )
 };
+
+const SavedProjectExperiences = ({ project }) => {
+    console.log(project)
+    return (
+        <div>
+            <ProjectExperiences project={project} />
+        </div>
+    )
+}
 
 const Input = ({ register, labelName, idName, errors }) => {
     return (

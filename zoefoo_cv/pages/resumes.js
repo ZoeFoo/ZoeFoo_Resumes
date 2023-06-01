@@ -128,7 +128,7 @@ export default function Resumes() {
                 <NavigationBar />
             </div>
 
-            <div className="flex justify-center mt-[90px] p-5 print:mt-0 p-0">
+            <div className="flex justify-center mt-[90px] p-5 print:mt-0 print:p-0">
                 <div className='page flex flex-nowrap'>
                     <div className='flex flex-col justify-around w-2/5 bg-slate-100'>
                         <div>

@@ -5,4 +5,7 @@
     <BuildCommand>
     </BuildCommand>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="components\resumes form components\" />
+  </ItemGroup>
 </Project>

@@ -81,7 +81,7 @@ const ProjectExperiences = ({ project, register, errors }) => {
                     <Input
                         register={register}
                         labelName={"Project Name"}
-                        idName={"projectName"}
+                        idName={"name"}
                         errors={errors} />
                 </div>
 
@@ -101,7 +101,7 @@ const ProjectExperiences = ({ project, register, errors }) => {
                             <Input
                                 register={register}
                                 labelName={"Project Purpose"}
-                                idName={"projectPurpose"}
+                                idName={"purpose"}
                                 errors={errors} />
                         </div>
                     </div>
@@ -123,7 +123,7 @@ const ProjectExperiences = ({ project, register, errors }) => {
                             <TextArea
                                 register={register}
                                 labelName={"Tech Skills"}
-                                idName={"techSkills"}
+                                idName={"skills"}
                                 errors={errors}
                                 rows={8}
                                 cols={41} />
