@@ -5,7 +5,7 @@ import { faPhone, faEnvelope, faSquarePlus } from '@fortawesome/free-solid-svg-i
 import SelfIntroductionInput from '@/components/resumesForm/SelfIntroductionInput';
 import PersonalQualitiesInput from '@/components/resumesForm/PersonalQualitiesInput';
 import LanguageInput from '@/components/resumesForm/LanguageInput';
-import Contact from '@/components/Contact';
+import ContactInput from '@/components/resumesForm/ContactInput';
 import ProjectExperiences from '@/components/ProjectExperiences';
 import Modal from '@/components/Modal';
 
@@ -111,7 +111,7 @@ const ResumesForm = () => {
                         </div>
 
                         <div>
-                            <Contact
+                            <ContactInput
                                 register={register}
                                 errors={errors} />
                         </div>
