@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import SelfIntroductionInput from '@/components/resumesForm/SelfIntroductionInput';
 import PersonalQualitiesInput from '@/components/resumesForm/PersonalQualitiesInput';
-import Language from '@/components/Language';
+import LanguageInput from '@/components/resumesForm/LanguageInput';
 import Contact from '@/components/Contact';
 import ProjectExperiences from '@/components/ProjectExperiences';
 import Modal from '@/components/Modal';
@@ -105,7 +105,7 @@ const ResumesForm = () => {
                         </div>
 
                         <div>
-                            <Language
+                            <LanguageInput
                                 register={register}
                                 errors={errors} />
                         </div>
