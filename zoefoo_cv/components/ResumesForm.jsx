@@ -6,6 +6,7 @@ import SelfIntroductionInput from '@/components/resumesForm/SelfIntroductionInpu
 import PersonalQualitiesInput from '@/components/resumesForm/PersonalQualitiesInput';
 import LanguageInput from '@/components/resumesForm/LanguageInput';
 import ContactInput from '@/components/resumesForm/ContactInput';
+import HandsOnExperiencesInput from "@/components/resumesForm/HandsOnExperiencesInput";
 import ProjectExperiences from '@/components/ProjectExperiences';
 import Modal from '@/components/Modal';
 
@@ -119,19 +120,9 @@ const ResumesForm = () => {
 
                     <div className='flex flex-col justify-evenly w-3/5 px-[25px] bg-white '>
                         <div>
-                            <div className='text-decoration inline-block text-xl tracking-[2px] font-bold px-5'>
-                                Hands-on Experiences
-                            </div>
-
-                            <div className=''>
-                                <TextArea
-                                    register={register}
-                                    labelName={"Hands-on Experiences"}
-                                    idName={"handsOnExperiences"}
-                                    errors={errors}
-                                    rows={8}
-                                    cols={2} />
-                            </div>
+                            <HandsOnExperiencesInput
+                                register={register}
+                                errors={errors} />
                         </div>
 
                         <div>
