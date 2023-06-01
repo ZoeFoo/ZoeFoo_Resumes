@@ -6,6 +6,9 @@
     </BuildCommand>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="components\resumes form components\" />
+    <TypeScriptConfiguration Remove="components\resumes form components\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="components\resumes form components\**" />
   </ItemGroup>
 </Project>

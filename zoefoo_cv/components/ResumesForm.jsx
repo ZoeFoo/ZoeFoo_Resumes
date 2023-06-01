@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import SelfIntroductionInput from '@/components/resumesForm/SelfIntroductionInput';
-import PersonalQualities from '@/components/PersonalQualities';
+import PersonalQualitiesInput from '@/components/resumesForm/PersonalQualitiesInput';
 import Language from '@/components/Language';
 import Contact from '@/components/Contact';
 import ProjectExperiences from '@/components/ProjectExperiences';
@@ -99,7 +99,7 @@ const ResumesForm = () => {
                         </div>
 
                         <div>
-                            <PersonalQualities
+                            <PersonalQualitiesInput
                                 register={register}
                                 errors={errors} />
                         </div>
